@@ -718,7 +718,7 @@ body.menu-aberto {
 }
 
 .tipo-guia {
-    width: 98%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -793,7 +793,7 @@ body.menu-aberto {
 
 .tipo-combos {
     color: #F0141E;
-    border-top: solid 16px #F0141E;
+    border-top: solid 15px #F0141E;
 }
 .tipo-combos::before {
     background-color: #F0141E;
@@ -801,7 +801,7 @@ body.menu-aberto {
 
 .tipo-fritas {
     color: #FFDC32;
-    border-top: solid 16px #FFDC32;
+    border-top: solid 15px #FFDC32;
 }
 .tipo-fritas::before {
     background-color: #FFDC32;
@@ -809,7 +809,7 @@ body.menu-aberto {
 
 .tipo-pizza {
     color: #FF5A1E;
-    border-top: solid 16px #FF5A1E;
+    border-top: solid 15px #FF5A1E;
 }
 .tipo-pizza::before {
     background-color: #FF5A1E;
@@ -817,7 +817,7 @@ body.menu-aberto {
 
 .tipo-bebidas {
     color: #460078;
-    border-top: solid 16px #460078;
+    border-top: solid 15px #460078;
 }
 .tipo-bebidas::before {
     background-color: #460078;
@@ -825,7 +825,7 @@ body.menu-aberto {
 
 .tipo-porcoes {
     color: #982720;
-    border-top: solid 16px #982720;
+    border-top: solid 15px #982720;
 }
 .tipo-porcoes::before {
     background-color: #982720;
