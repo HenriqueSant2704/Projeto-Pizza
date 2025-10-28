@@ -1397,7 +1397,7 @@ footer {
 
 @media (max-width: 980px) {
     body {
-        margin-top: 85px;
+        margin-top: 80px;
     }
 
     .menu {
@@ -1469,7 +1469,7 @@ footer {
     }
 
     .carrosel {
-        width: 99%;
+        width: 100%;
         height: 500px;
     }
 
@@ -1554,7 +1554,8 @@ footer {
 
 @media (max-width:650px) {
     body {
-        margin-top: 80px;
+        margin-top: 70px;
+        font-family: 'Lobster', cursive;
     }
 
     .menu {
@@ -1664,35 +1665,35 @@ footer {
     }
 
     .caixa-guia{
-        height: 85px;
+        height: 80px;
     }
 
     .tipo-guia span {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .tipo-guia img {
-        width: 31px;
+        width: 29px;
     }
 
     .tipo-combos {
-        border-top: solid 14px #F0141E;
+        border-top: solid 12px #F0141E;
     }
 
     .tipo-fritas {
-        border-top: solid 14px #FFDC32;
+        border-top: solid 12px #FFDC32;
     }
 
     .tipo-pizza {
-        border-top: solid 14px #FF5A1E;
+        border-top: solid 12px #FF5A1E;
     }
 
     .tipo-bebidas {
-        border-top: solid 14px #460078;
+        border-top: solid 12px #460078;
     }
 
     .tipo-porcoes {
-        border-top: solid 14px #982720;
+        border-top: solid 12px  #982720;
     }
 
     .titulo h3 {
