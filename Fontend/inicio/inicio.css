@@ -850,7 +850,7 @@ body.menu-aberto {
 }
 
 .titulo h3 {
-    font-family: 'Lobster', cursive;
+    font-family: 'poppins', sans-serif;
     font-size: clamp(24px, 5vw, 36px); 
     color: #333;
     position: relative;
