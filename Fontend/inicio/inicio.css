@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
     margin: 0;
@@ -9,7 +9,7 @@ body {
     width: 100%;
     height: 100vh;
     background-color: rgb(255, 255, 255);
-    font-family: "Poppins", sans-serif;
+    font-family: '', sans-serif;
     margin-top: 90px;
 }
 
@@ -319,7 +319,7 @@ body.menu-aberto {
 }
 
 .user-menu {
-    width: 230px;
+    width: 200px;
     position: absolute;
     top: 85px; 
     right: 100px; 
@@ -334,8 +334,7 @@ body.menu-aberto {
     animation: fadeIn 0.2s ease-in-out;
 }
 
-.user-email 
-{
+.user-email {
     font-size: 14px;
     color: #666;
 }
@@ -1671,7 +1670,6 @@ footer {
 
     .tipo-guia span {
         font-size: 16px;
-        font-family: 'Fredoka One', cursive;
     }
 
     .tipo-guia img {
@@ -1744,7 +1742,6 @@ footer {
 
     .descricao-mais-pedidos h3 {
         font-size: 20px;
-        font-family: 'Poppins', sans-serif;
 }
 
     .overlay-card h3 {
