@@ -86,7 +86,7 @@ document.querySelectorAll('.tipo-guia a').forEach(link => {
     'comida.png': '../../assets/icons/comidas/comida-branca.png',
     'peixe-e-batata-frita.png': '../../assets/icons/comidas/-batata-frita-branco.png',
     'pizza.png': '../../assets/icons/comidas/Pizza-branco.png',
-    'copo-de-refrigerante-com-canudo.png': '../../assets/icons/comidas/copo-branco.png',
+    'copo-de-refrigerante-com-canudo.png': '../../assets/icons/comidas/copobranco.png',
     'porção.png': '../../assets/icons/comidas/peixe-e-batata-frita-branco.png'
   };
 
@@ -229,7 +229,7 @@ document.querySelectorAll('.card-mais-pedidos').forEach(card => {
 
 //===========================================
 
-const btnCarrinho = document.querySelector('.iconis-menu button:last-child'); // último botão (ícone do carrinho)
+const btnCarrinho = document.querySelector('.iconis-menu button:last-child'); 
 const carrinho = document.getElementById('carrinhoLateral');
 const fecharCarrinho = document.getElementById('fecharCarrinho');
 const overlayCarrinho = document.getElementById('overlayCarrinho');
