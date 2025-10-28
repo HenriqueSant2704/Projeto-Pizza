@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Fontend/inicio/inicio.css">
+    <title>ML Pizza</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="logo-menu">
+            <button class="mais-menu">
+                <img src="./assets/icons/menu/cardapio.png" alt="">
+            </button>
+            <img class="logo" src="./assets/img/menu/Pizza-Logo-Design-Graphics-29132095-3-580x387-removebg-preview.png"
+                alt="">
+        </div>
+        <div class="input-menu">
+            <button class="lupa">
+                <img src="./assets/icons/menu/lupa-red.png" alt="">
+            </button>
+            <input type="text">
+            <button class="X">
+                <img src="./assets/icons/menu/x.png" alt="">
+            </button>
+        </div>
+        <div class="iconis-menu">
+            <button>
+                <img src="./assets/icons/menu/lupa.png" alt="">
+            </button>
+            <button class="btn-user">
+                <img src="./assets/icons/menu/do-utilizador.png" alt="">
+            </button>
+
+            <div class="user-menu">
+                <div class="user">
+                    <p>Olá <span class="user-name">Usuário</span></p>
+                    <p><span class="user-email">(17) 99202-0369</span></p>
+                </div>
+                <div class="opcoes-user">
+                    <a href="#">
+                        <img src="./assets/icons/conta-user/avatar-do-usuario.png" alt="">
+                        <span>Meu Perfil</span>
+                    </a>
+                    <a href="#">
+                        <img src="./assets/icons/conta-user/recibo-de-compras.png" alt="">
+                        <span>Meus Pedidos</span>
+                    </a>
+                    <a href="#">
+                        <img src="./assets/icons/conta-user/mapas-e-bandeiras.png" alt="">
+                        <span>Endereços</span>
+                    </a>
+                </div>
+                <div class="sair">
+                    <a href="#">
+                        <img src="./assets/icons/conta-user/opcao-de-sair.png" alt="">
+                        <span>Sair</span>
+                    </a>
+                </div>
+            </div>
+
+            <button>
+                <img src="./assets/icons/menu/carrinho-carrinho.png" alt="">
+            </button>
+        </div>
+    </div>
+
+    <div class="carrinho-lateral" id="carrinhoLateral">
+        <div class="carrinho-header">
+            <h3>Meu Carrinho</h3>
+            <button class="fechar-carrinho" id="fecharCarrinho">&times;</button>
+        </div>
+        
+        <div class="carrinho-conteudo"> 
+            <div class="card-iten">
+                <div class="card-iten-imagem">
+                    <img src="./assets/icons/comidas/comida.png">
+                </div> 
+                
+                <div class="iten-detalhe">
+                    <label>Margherita</label>
+                    <span>R$ 29,90</span>
+                    <div class="iten-quantidade">
+                        <button class="decrementar">-</button>
+                        <span class="quantidade-valor">1</span>
+                        <button class="incrementar">+</button>
+                    </div>
+                </div>
+
+                <div class="iten-remover">
+                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="card-iten">
+                <div class="card-iten-imagem">
+                    <img src="./assets/icons/comidas/comida.png">
+                </div> 
+                
+                <div class="iten-detalhe">
+                    <label>Margherita</label>
+                    <span>R$ 29,90</span>
+                    <div class="iten-quantidade">
+                        <button class="decrementar">-</button>
+                        <span class="quantidade-valor">1</span>
+                        <button class="incrementar">+</button>
+                    </div>
+                </div>
+
+                <div class="iten-remover">
+                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="card-iten">
+                <div class="card-iten-imagem">
+                    <img src="./assets/icons/comidas/comida.png">
+                </div> 
+                
+                <div class="iten-detalhe">
+                    <label>Margherita</label>
+                    <span>R$ 29,90</span>
+                    <div class="iten-quantidade">
+                        <button class="decrementar">-</button>
+                        <span class="quantidade-valor">1</span>
+                        <button class="incrementar">+</button>
+                    </div>
+                </div>
+
+                <div class="iten-remover">
+                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="card-iten">
+                <div class="card-iten-imagem">
+                    <img src="./assets/icons/comidas/comida.png">
+                </div> 
+                
+                <div class="iten-detalhe">
+                    <label>Margherita</label>
+                    <span>R$ 29,90</span>
+                    <div class="iten-quantidade">
+                        <button class="decrementar">-</button>
+                        <span class="quantidade-valor">1</span>
+                        <button class="incrementar">+</button>
+                    </div>
+                </div>
+
+                <div class="iten-remover">
+                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="card-iten">
+                <div class="card-iten-imagem">
+                    <img src="./assets/icons/comidas/comida.png">
+                </div> 
+                
+                <div class="iten-detalhe">
+                    <label>Margherita</label>
+                    <span>R$ 29,90</span>
+                    <div class="iten-quantidade">
+                        <button class="decrementar">-</button>
+                        <span class="quantidade-valor">1</span>
+                        <button class="incrementar">+</button>
+                    </div>
+                </div>
+
+                <div class="iten-remover">
+                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carrinho-rodape">
+            <div class="total-total">
+                <span>Total:</span>
+                <span class="total-valor">R$ 29,90</span>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <div class="overlay-carrinho" id="overlayCarrinho"></div>
+
+
+    <div id="menu-overlay"></div>
+
+    <div id="menu-lateral">
+        <div class="menu-header">
+            <span class="menu-header-titulo">Menu</span>
+            <button id="btn-fechar-menu">&times;</button>
+        </div>
+
+        <div class="menu-corpo">
+            <div class="menu-secao">Acesso Rápido</div>
+            <ul class="menu-lista">
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/adicionar.png" alt="Ícone Monte sua Pizza">
+                        <span>Monte sua Pizza</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/prato.png" alt="Ícone Cardápio Completo">
+                        <span>Cardápio Completo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/rastreamento-de-pedidos.png"
+                            alt="Ícone Acompanhe seu Pedido">
+                        <span>Acompanhe seu Pedido</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="menu-secao">Nossa Loja</div>
+            <ul class="menu-lista">
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/informacoes.png" alt="Ícone Sobre a Pizzaria">
+                        <span>Sobre a Pizzaria</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/mapas-e-bandeiras.png" alt="Ícone Área de Entrega">
+                        <span>Área de Entrega</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <img src="./assets/icons/menu-lateral/receptor-de-telefone.png" alt="Ícone Fale Conosco">
+                        <span>Fale Conosco</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu-rodape">
+            <a href="#">
+                <img src="./assets/icons/menu-lateral/logotipo-do-instagram.png" class="icon-social">
+            </a>
+            <a href="#">
+                <img src="./assets/icons/menu-lateral/whatsapp.png" class="icon-social">
+            </a>
+        </div>
+    </div>
+
+    <div class="carrosel">
+        <div class="carrosel-container">
+            <div class="slide active">
+                <img src="./assets/img/Carrossel/ChatGPT Image 18 de out. de 2025, 11_56_57.png" alt="Promoção 1">
+            </div>
+            <div class="slide">
+                <img src="./assets/img/Carrossel/1512x600_Core-Offer.webp" alt="Promoção 2">
+            </div>
+            <div class="slide">
+                <img src="./assets/img/Carrossel/Promocao-coca-cola-Pega-Esse-Sabor.jpg" alt="Promoção 3">
+            </div>
+
+            <button class="btn prev">&#10094;</button>
+            <button class="btn next">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="caixa-guia">
+        <div class="tipo-guia">
+            <a href="#" class="tipo-combos">
+                <img src="./assets/icons/comidas/comida.png" alt="">
+                <span>Combos</span>
+            </a>
+            <a href="#" class="tipo-fritas">
+                <img src="./assets/icons/comidas/peixe-e-batata-frita.png" alt="">
+                <span>Fritas</span>
+            </a>
+            <a href="#" class="tipo-pizza">
+                <img src="./assets/icons/comidas/pizza.png" alt="">
+                <span>Pizza</span>
+            </a>
+            <a href="#" class="tipo-bebidas">
+                <img src="./assets/icons/comidas/copo-de-refrigerante-com-canudo.png" alt="">
+                <span>Bebidas</span>
+            </a>
+            <a href="#" class="tipo-porcoes">
+                <img src="./assets/icons/comidas/porção.png" alt="">
+                <span>Porções</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="caixa-mais-pedidos">
+        <div class="titulo">
+            <h3>Mais Populares</h3>
+        </div>
+
+        <div class="carrossel-container">
+            <button class="btn-seta esquerda">&#10094;</button>
+
+            <div class="carrossel-mais-pedidos">
+                <div class="card-mais-pedidos">
+                    <img class="pizza-alta" src="./assets/img/pizzas/Moda da Casa.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Moda da Casa</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Moda da Casa</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Calabresa Especial.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Calabresa Especial</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Calabresa Especial</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/Batata.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Batata frita</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Batata frita</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/pastel.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Pastel</h3>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Pastel</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/coca-cola.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Coca-Cola</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Coca-Cola</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/sprite.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Sprite</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$88,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Sprite</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 88,00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seta direita">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="caixa-mais-pedidos">
+        <div class="titulo">
+            <h3>Pizzas</h3>
+        </div>
+
+        <div class="carrossel-container">
+            <button class="btn-seta esquerda">&#10094;</button>
+
+            <div class="carrossel-mais-pedidos">
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon">+</div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Monte sua Pizza</h3>
+                        <p><span>Do Jeito que você quiser</span></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Moda da Casa.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Moda da Casa</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Moda da Casa</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Calabresa Especial.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Calabresa Especial</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Calabresa Especial</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Frango com Catupiry.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Frango com Catupiry</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$82,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Frango com Catupiry</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 82,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Portuguesa.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Portuguesa</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$88,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Portuguesa</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 88,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Brócolis.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>brócolis</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$68,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Brócolis</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 68,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Pepperoni.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Pepperoni</h3>
+                        <p><span>Grande</span></p>
+                        <p><span>A partir de</span> <strong>R$78,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Pepperoni</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 78,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon"><img src="./assets/icons/pizza/abaixo.png" alt=""></div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Ver mais Opções</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seta direita">&#10095;</button>
+        </div>
+        <div class="extra-pizzas"></div>
+
+    </div>
+
+    <div class="caixa-mais-pedidos">
+        <div class="titulo">
+            <h3>Pizzas Doce</h3>
+        </div>
+
+        <div class="carrossel-container">
+            <button class="btn-seta esquerda">&#10094;</button>
+
+            <div class="carrossel-mais-pedidos">
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon">+</div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Monte sua Pizza</h3>
+                        <p><span>Do Jeito que você quiser</span></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/romeu.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Romeu e Julieta</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Romeu e Julieta</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/brigadeiro.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Brigadeiro</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Brigadeiro</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/prestigio.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Prestígio</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$82,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Prestígio</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 82,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/banana.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Banana com Canela</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$88,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Banana com Canela</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 88,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/chocolate com morango.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Morango com Chocolate</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$68,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Morango com Chocolate</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 68,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/pizzas/Doce de Leite.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Doce de Leite</h3>
+                        <p><span>A partir de</span> <strong>R$78,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Doce de Leite</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 78,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon"><img src="./assets/icons/pizza/abaixo.png" alt=""></div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Ver mais Opções</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seta direita">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="caixa-mais-pedidos">
+        <div class="titulo">
+            <h3>Bebidas</h3>
+        </div>
+
+        <div class="carrossel-container">
+            <button class="btn-seta esquerda">&#10094;</button>
+
+            <div class="carrossel-mais-pedidos">
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/coca-cola.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Coca-Cola</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Coca-Cola</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/guarana.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Guaraná Antarctica</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Guaraná Antarctica</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/pepsi.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Pepsi</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$82,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Pepsi</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 82,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/sprite.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Sprite</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$88,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Sprite</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 88,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/fanta-laranja.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Fanta Laranja</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$68,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Fanta Laranja</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 68,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/bebidas/Schweppes.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Schweppes</h3>
+                        <p><span>350 ML</span></p>
+                        <p><span>A partir de</span> <strong>R$78,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Schweppes</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 78,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon"><img src="./assets/icons/pizza/abaixo.png" alt=""></div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Ver mais Opções</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seta direita">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="caixa-mais-pedidos">
+        <div class="titulo">
+            <h3>Fritas</h3>
+        </div>
+
+        <div class="carrossel-container">
+            <button class="btn-seta esquerda">&#10094;</button>
+
+            <div class="carrossel-mais-pedidos">
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/Batata.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Batata frita</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$90,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Batata frita</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 90,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/pastel.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Pastel</h3>
+                        <p><span>A partir de</span> <strong>R$75,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Pastel</h3>
+                        <a href="#" class="detalhes">Monte seu Pastel</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 75,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/nugget.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Nugget</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$82,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Nugget</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 82,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/bolinhos.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Bolinhas</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$88,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Bolinhas</h3>
+                        <a href="#" class="detalhes">Monte seu Bolinha</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 88,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/Frango a passarinho.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Frango a passarinho</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$68,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Frango a passarinho</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 68,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-mais-pedidos">
+                    <img src="./assets/img/fritas/aneis de cebola.png" alt="">
+                    <div class="descricao-mais-pedidos">
+                        <h3>Aneis de Cebola</h3>
+                        <p><span>Media</span></p>
+                        <p><span>A partir de</span> <strong>R$78,00</strong></p>
+                        <button class="btn-pedir">Pedir Agora</button>
+                    </div>
+                    <div class="overlay-card">
+                        <h3>Aneis de Cebola</h3>
+                        <a href="#" class="detalhes">+ Detalhes</a>
+                        <div class="quantidade">
+                            <button class="menos">-</button>
+                            <span class="valor">1</span>
+                            <button class="mais">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar</button>
+                        <p class="total">Total: <strong>R$ 78,00</strong></p>
+                    </div>
+                </div>
+
+                <div class="card-add-pedidos">
+                    <div class="card-add-icon"><img src="./assets/icons/pizza/abaixo.png" alt=""></div>
+                    <div class="descricao-mais-pedidos">
+                        <h3>Ver mais Opções</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seta direita">&#10095;</button>
+        </div>
+    </div>
+
+    <footer>
+        <footer class="site-footer" id="contato">
+        <div class="footer-container">
+    
+            <div class="footer-col logo-col">
+                <a href="#" class="logo-text">ML Pizza</a>
+                <p>A melhor pizza da região, com ingredientes frescos e massa artesanal. Peça agora!</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">
+                        <img src="./assets/icons/footer/logotipo-do-instagram.png" alt="">
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <img src="./assets/icons/footer/facebook.png" alt="">
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <img src="./assets/icons/footer/whatsapp.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#menu-seu-site">Cardápio Completo</a></li>
+                    <li><a href="#promocoes-seu-site">Promoções</a></li>
+                    <li><a href="#monte-sua-pizza">Monte sua Pizza</a></li>
+                    <li><a href="#sobre-nos">Sobre Nós</a></li>
+                    <li><a href="#area-entrega">Área de Entrega</a></li>
+                </ul>
+            </div>
+
+          
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="contact-info">
+                    <li>
+                        
+                        <img src="./assets/icons/footer/mapas-e-bandeiras.png" alt="">
+                        <span>Rua Assad Calliu, 123 - Centro<br>Jaboraandi, SP</span>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/footer/telefone.png" alt="">
+                        <span>(17) 99202-0369</span>
+                    </li>
+                    <li>
+
+                        <img src="./assets/icons/footer/rotacao-no-sentido-horario.png" alt="">
+                        <span>Quinta a Dom: 18:00h - 23:30h</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       
+        <div class="footer-payment">
+            <h4>Formas de Pagamento</h4>
+            <div class="payment-icons">
+
+                <div class="social-icons">
+                    <a>
+                        <img src="./assets/icons/footer/pix.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./assets/icons/footer/dinheiro.png" alt="">
+                    </a>
+                    <a>
+                        <img src="assets/icons/footer/pagamento-com-cartao-de-credito.png" alt="">
+                    </a>
+            </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ML Pizza. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="./Fontend/inicio/inicio.js"></script>
+</body>
+
+</html>
