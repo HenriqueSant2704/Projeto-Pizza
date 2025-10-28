@@ -1185,7 +1185,7 @@ body.menu-aberto {
 
         
 .descricao-mais-pedidos h3 {
-    font-family: 'Lobster', cursive; 
+    font-family: 'Baloo 2', cursive;
     font-size: 24px;
     color: #333;
     margin: 0;
@@ -1743,7 +1743,6 @@ footer {
 
     .descricao-mais-pedidos h3 {
         font-size: 20px;
-        font-family: 'Baloo 2', cursive;
 }
 
     .overlay-card h3 {
