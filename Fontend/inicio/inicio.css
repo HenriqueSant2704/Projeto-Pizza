@@ -750,7 +750,7 @@ body.menu-aberto {
 
 .tipo-guia span {
     font-size: 20px;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Baloo 2', cursive;
     transition: color 0.3s ease-in-out;
 }
 
@@ -962,7 +962,7 @@ body.menu-aberto {
 
         
 .descricao-mais-pedidos h3 {
-    font-family: 'Lobster', cursive; 
+    font-family: 'Nunito', sans-serif;
     font-size: 24px;
     color: #333;
     margin: 0;
