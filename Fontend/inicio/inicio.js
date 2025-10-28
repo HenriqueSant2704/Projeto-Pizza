@@ -82,7 +82,12 @@ document.querySelectorAll('.tipo-guia a').forEach(link => {
   const originalSrc = img.getAttribute('src');
 
  
-const basePath = `${window.location.origin}/Projeto-Pizza/assets/icons/comidas/`;
+const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+
+
+const basePath = isLocal 
+  ? "../../../assets/icons/comidas/" 
+  : `${window.location.origin}/Projeto-Pizza/assets/icons/comidas/`;
 
 const hoverSources = {
   'comida.png': `${basePath}comida-branca.png`,
@@ -91,6 +96,7 @@ const hoverSources = {
   'copo-de-refrigerante-com-canudo.png': `${basePath}copo-branco.png`,
   'porcao.png': `${basePath}porcao-branco.png`
 };
+
  
 
   
