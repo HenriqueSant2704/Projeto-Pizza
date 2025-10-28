@@ -88,7 +88,7 @@ document.querySelectorAll('.tipo-guia a').forEach(link => {
   'pizza.png': '../../assets/icons/comidas/pizza-branco.png',
   'copo-de-refrigerante-com-canudo.png': '../../assets/icons/comidas/copo-branco.png',
   'porcao.png': '../../assets/icons/comidas/porcao-branco.png'
-};
+};   
 
   
   const nomeArquivo = originalSrc.split('/').pop();
