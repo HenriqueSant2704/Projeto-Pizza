@@ -82,13 +82,16 @@ document.querySelectorAll('.tipo-guia a').forEach(link => {
   const originalSrc = img.getAttribute('src');
 
  
-  const hoverSources = {
-  'comida.png': '../../../assets/icons/comidas/comida-branca.png',
-  'peixe-e-batata-frita.png': '../../../assets/icons/comidas/peixe-e-batata-frita-branco.png',
-  'pizza.png': '../../../assets/icons/comidas/pizza-branco.png',
-  'copo-de-refrigerante-com-canudo.png': '../../../assets/icons/comidas/copo-branco.png',
-  'porcao.png': '../../../assets/icons/comidas/porcao-branco.png'
-};   
+const basePath = `${window.location.origin}/Projeto-Pizza/assets/icons/comidas/`;
+
+const hoverSources = {
+  'comida.png': `${basePath}comida-branca.png`,
+  'peixe-e-batata-frita.png': `${basePath}peixe-e-batata-frita-branco.png`,
+  'pizza.png': `${basePath}pizza-branco.png`,
+  'copo-de-refrigerante-com-canudo.png': `${basePath}copo-branco.png`,
+  'porcao.png': `${basePath}porcao-branco.png`
+};
+ 
 
   
   const nomeArquivo = originalSrc.split('/').pop();
