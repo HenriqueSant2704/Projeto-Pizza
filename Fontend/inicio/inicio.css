@@ -1536,8 +1536,8 @@ footer {
     }
 
     .titulo h3 {
-        font-size: clamp(24px, 5vw, 34px); 
-        
+        font-size: clamp(24px, 5vw, 38px); 
+        margin-bottom: 12px; 
     }
 
 
