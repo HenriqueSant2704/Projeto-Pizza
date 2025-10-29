@@ -71,48 +71,6 @@ carrosel.addEventListener('mouseleave', () => {
   autoSlideInterval = setInterval(nextSlide, 7000); 
 });
 
-//=======================================================================
-
-// Seleção de Comidas
-
-//========================================================================
-
-document.querySelectorAll('.tipo-guia a').forEach(link => {
-  const img = link.querySelector('img');
-  const originalSrc = img.getAttribute('src');
-
- 
-const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-
-
-const basePath = isLocal 
-  ? "../../../assets/icons/comidas/" 
-  : `${window.location.origin}/Projeto-Pizza/assets/icons/comidas/`;
-
-const hoverSources = {
-  'comida.png': `${basePath}comida-branca.png`,
-  'peixe-e-batata-frita.png': `${basePath}peixe-e-batata-frita-branco.png`,
-  'pizza.png': `${basePath}pizza-branco.png`,
-  'copo-de-refrigerante-com-canudo.png': `${basePath}copo-branco.png`,
-  'porcao.png': `${basePath}porcao-branco.png`
-};
-
- 
-
-  
-  const nomeArquivo = originalSrc.split('/').pop();
-
-
-  link.addEventListener('mouseenter', () => {
-    if (hoverSources[nomeArquivo]) {
-      img.setAttribute('src', hoverSources[nomeArquivo]);
-    }
-  });
-
-  link.addEventListener('mouseleave', () => {
-    img.setAttribute('src', originalSrc);
-  });
-});
 
 //=========================================================================
 

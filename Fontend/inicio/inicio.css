@@ -790,6 +790,7 @@ body.menu-aberto {
 .tipo-guia a:hover img {
     transform: scale(1.2);
     opacity: 0.9;
+    filter: brightness(0) invert(1);
 }
 
 
@@ -1552,6 +1553,9 @@ footer {
         flex: 0 0 260px;  
     }
 
+    .btn-seta {
+        display: none;
+    }
 }
 
 @media (max-width:650px) {
@@ -1748,5 +1752,9 @@ footer {
     .overlay-card h3 {
         margin-top: -10px;
     }
+
+    .btn-seta {
+    display: none;
+}
     
 }
