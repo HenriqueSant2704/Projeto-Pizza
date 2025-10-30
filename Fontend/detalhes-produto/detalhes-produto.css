@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 90px;
+}
+
+.menu-topo {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 8px 10px;
+    border-bottom: solid 2px #e0e0e0;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+}
+
+.menu-topo .voltar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-topo .voltar h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.voltar img {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    margin-top: 6px;
+    filter: invert(29%) sepia(8%) saturate(749%) hue-rotate(175deg) brightness(91%) contrast(85%);
+}
+
+.compartilhar a {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    padding: 6px;
+}
+
+.compartilhar img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.detalhes-produto {
+    width: 83%;
+    height: 300px;
+    display: flex;
+    gap: 20px;
+}
+
+ .imagem-produto {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.detalhes-produto .imagem-produto img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.info-produto {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.descrição-produto h4 {
+    font-size: 40px;
+}
+
+.detalhes {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 60px;
+}
+
+.titulo-detalhes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.titulo-detalhes img {
+    width: 17px;
+    height: 17px;
+}
+
+.titulo-detalhes h2 {
+    font-size: 35px;
+    font-weight: 600;
+    
+}
+
+.titulo-detalhes h3 {
+    font-size: 19px;
+    font-weight: 600;
+    
+}
+
+.caixa-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+.btn-produto {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    gap: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    
+    &:hover {
+        border-color: #ff6f61;
+        transform: translateY(-2px);
+    }
+
+    &:focus {
+        border-top: solid 6px #ff3f2d;
+        background-color: #fbdede;
+        border-left: 2px solid #ff6152;
+        border-bottom: 2px solid #ff6152;
+        border-right: 2px solid #ff6152;
+    }
+}
+
+.btn-produto h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-produto span {
+    font-size: 14px;
+    color: #777;
+}
+
+.caixa-mais-pedidos {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.caixa-mais-pedidos h2 {
+  font-weight: 700;
+  color: #333;
+}
+
+.carrossel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.lista-mais-pedidos:active {
+  cursor: grabbing;
+}
+
+
+.lista-mais-pedidos {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  cursor: grab; 
+}
+
+.lista-mais-pedidos::-webkit-scrollbar {
+  height: 10px;
+}
+
+.lista-mais-pedidos::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.card-pedidos {
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.card-pedidos:hover {
+  transform: scale(1.03);
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 130px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.btn-add {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #27ae60;
+}
+
+.controle-qtd {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    display: none; 
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(228, 228, 228, 0.95);
+}
+
+
+.controle-qtd button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.controle-qtd .qtd {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 15px;
+  text-align: center;
+}
+
+.card-pedidos p {
+  margin: 10px 0 0 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-pedidos span {
+  margin: 5px 0 10px 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+
+.pesquisa-sabor {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+.pesquisa-sabor input {
+    width: 100%;
+     padding: 10px 40px 10px 40px;;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: #e0e0e0;
+}
+
+.pesquisa-sabor img {
+    margin-left: 10px;
+    position: absolute;
+}
+
+.lupa {
+    width: 20px;
+    left: 12px;
+}
+
+.x {
+    width: 15px;
+    right: 12px;
+    cursor: pointer;
+}
