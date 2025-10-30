@@ -1,10 +1,11 @@
 //=====================================================================
+
 // Carrossel dos card mais pedidos
+
 //=====================================================================
 
 const lista = document.querySelector('.lista-mais-pedidos');
 
-// Botões do carrossel (se você quiser adicioná-los)
 const btnLeft = document.querySelector('.btn-carrossel.left');
 const btnRight = document.querySelector('.btn-carrossel.right');
 
@@ -13,7 +14,6 @@ if (btnLeft && btnRight) {
   btnRight.addEventListener('click', () => lista.scrollBy({ left: 220, behavior: 'smooth' }));
 }
 
-// Arrastar com mouse
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -36,7 +36,9 @@ lista.addEventListener('mousemove', (e) => {
 });
 
 //=====================================================================
+
 // Cards e controle de quantidade
+
 //=====================================================================
 
 const cards = document.querySelectorAll(".card-pedidos");
@@ -49,47 +51,45 @@ cards.forEach((card) => {
   const btnMenos = card.querySelector(".menos");
   let qtd = 1;
 
-  // Variáveis para diferenciar clique de arrasto
   let mouseDownX = 0;
   let mouseUpX = 0;
 
-  // Detecta mousedown no card
+
   card.addEventListener("mousedown", (e) => {
     mouseDownX = e.clientX;
   });
 
-  // Detecta mouseup no card
   card.addEventListener("mouseup", (e) => {
     mouseUpX = e.clientX;
     const diff = Math.abs(mouseDownX - mouseUpX);
-    if (diff < 5) { // tolerância de 5px = clique real
-      // Alterna exibição do controle
-      if (controle.style.display === "flex") {
-        controle.style.display = "none";
-        btnAdd.style.display = "block";
-        qtd = 1;
-        qtdSpan.textContent = qtd;
-      } else {
-        btnAdd.style.display = "none";
-        controle.style.display = "flex";
+    if (diff < 5) {
+
+      if (!e.target.closest(".btn-add, .mais, .menos")) {
+        if (controle.style.display === "flex") {
+          controle.style.display = "none";
+          btnAdd.style.display = "block";
+          qtd = 1;
+          qtdSpan.textContent = qtd;
+        } else {
+          btnAdd.style.display = "none";
+          controle.style.display = "flex";
+        }
       }
     }
   });
 
-  // Evita conflito de clique nos botões internos
-  [btnMais, btnMenos, btnAdd].forEach((btn) => {
-    btn.addEventListener("mousedown", (e) => e.stopPropagation());
-    btn.addEventListener("mouseup", (e) => e.stopPropagation());
+  btnAdd.addEventListener("click", (e) => {
+    e.stopPropagation();
+    btnAdd.style.display = "none";
+    controle.style.display = "flex";
   });
 
-  // Botão de adicionar quantidade
   btnMais.addEventListener("click", (e) => {
     e.stopPropagation();
     qtd++;
     qtdSpan.textContent = qtd;
   });
 
-  // Botão de remover quantidade
   btnMenos.addEventListener("click", (e) => {
     e.stopPropagation();
     qtd--;
@@ -103,3 +103,10 @@ cards.forEach((card) => {
     }
   });
 });
+
+
+//=============================================================
+
+//
+
+//=============================================================

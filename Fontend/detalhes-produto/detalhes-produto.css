@@ -178,135 +178,135 @@ body {
 }
 
 .caixa-mais-pedidos {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-top: 30px;
-  gap: 15px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 30px;
+    gap: 15px;
 }
 
 .caixa-mais-pedidos h2 {
-  font-weight: 700;
-  color: #333;
+    font-weight: 700;
+    color: #333;
 }
 
 .carrossel-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .lista-mais-pedidos:active {
-  cursor: grabbing;
+    cursor: grabbing;
 }
 
 
 .lista-mais-pedidos {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 20px;
-  cursor: grab; 
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    cursor: grab; 
 }
 
 .lista-mais-pedidos::-webkit-scrollbar {
-  height: 10px;
+    height: 10px;
 }
 
 .lista-mais-pedidos::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 .card-pedidos {
-  flex: 0 0 auto;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  cursor: pointer;
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
 }
 
 .card-pedidos:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .img-container {
-  position: relative;
-  width: 100%;
-  height: 130px;
+    position: relative;
+    width: 100%;
+    height: 130px;
 }
 
 .img-container img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 10px 0 0;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
 }
 
 .btn-add {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background-color: #2ecc71;
-  color: #fff;
-  font-size: 20px;
-  border: none;
-  border-radius: 6px;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .btn-add:hover {
-  background-color: #27ae60;
+    background-color: #27ae60;
 }
 
 .controle-qtd {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    display: none; 
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(228, 228, 228, 0.95);
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        display: none; 
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(228, 228, 228, 0.95);
 }
 
 
 .controle-qtd button {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: #333;
-  font-weight: bold;
-  padding: 4px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    padding: 4px;
 }
 
 .controle-qtd .qtd {
-  font-size: 14px;
-  font-weight: bold;
-  min-width: 15px;
-  text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
 }
 
 .card-pedidos p {
-  margin: 10px 0 0 10px;
-  font-weight: 600;
-  color: #333;
+    margin: 10px 0 0 10px;
+    font-weight: 600;
+    color: #333;
 }
 
 .card-pedidos span {
-  margin: 5px 0 10px 10px;
-  color: #444;
-  font-weight: 500;
+    margin: 5px 0 10px 10px;
+    color: #444;
+    font-weight: 500;
 }
 
 
@@ -321,7 +321,7 @@ body {
 
 .pesquisa-sabor input {
     width: 100%;
-     padding: 10px 40px 10px 40px;;
+    padding: 10px 40px 10px 40px;;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     margin-left: 10px;
