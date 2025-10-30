@@ -151,19 +151,15 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
-    margin-left: 10px;
-    
+    border-top: solid 6px #ff3f2d;
+    background-color: #fbdede;
+    border-left: 2px solid #ff6152;
+    border-bottom: 2px solid #ff6152;
+    border-right: 2px solid #ff6152;
+
     &:hover {
         border-color: #ff6f61;
         transform: translateY(-2px);
-    }
-
-    &:focus {
-        border-top: solid 6px #ff3f2d;
-        background-color: #fbdede;
-        border-left: 2px solid #ff6152;
-        border-bottom: 2px solid #ff6152;
-        border-right: 2px solid #ff6152;
     }
 }
 
