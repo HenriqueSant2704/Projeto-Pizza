@@ -133,11 +133,11 @@ document.querySelectorAll('.item-sabor').forEach(item => {
 
     item.addEventListener('click', (e) => {
         
-        // Lógica para marcar/desmarcar
         if (e.target !== checkbox) {
             checkbox.checked = !checkbox.checked;
         }
         item.classList.toggle('selected', checkbox.checked);
+        
 
 //=================================================================================================================
 
@@ -164,8 +164,84 @@ document.querySelectorAll('.item-sabor').forEach(item => {
 });
 
 
+
+//======================================================================================================================
+
+// esconder os adicionais
+
 //======================================================================================================================
 
 
+const caixaAdcionais = document.querySelector('.caixa-adcionais');
+
+
+if (caixaAdcionais) {
+    
+    const headerAdcionais = caixaAdcionais.querySelector('.select-header');
+
+    
+    if (headerAdcionais) {
+        headerAdcionais.addEventListener('click', () => {
+            caixaAdcionais.classList.toggle('active');
+        });
+    }
+}
+
 
 //======================================================================================================================
+
+// selecionar com a div (para adicionais)
+
+//======================================================================================================================
+
+
+document.querySelectorAll('.item-adcionais').forEach(item => {
+    
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (!checkbox) return; 
+
+  
+    const containerPai = item.closest('.caixa-adcionais');
+    if (!containerPai) return;
+
+    
+    const statusDiv = containerPai.querySelector('.status-opcional');
+    if (!statusDiv) return;
+
+    const statusSpan = statusDiv.querySelector('span');
+    if (!statusSpan) return;
+    
+    
+    item.addEventListener('click', (e) => {
+     
+        if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+       
+        item.classList.toggle('selected', checkbox.checked);
+        
+
+//=================================================================================================================
+
+// verifica se o checkbox esta selecionado ou nao, e muda o texto do status
+
+//==================================================================================================================
+
+       
+        const allCheckboxes = containerPai.querySelectorAll('.item-adcionais input[type="checkbox"]');
+
+        
+        const isAnyChecked = Array.from(allCheckboxes).some(cb => cb.checked);
+
+        
+        if (isAnyChecked) {
+            statusSpan.textContent = 'Selecionado';
+            statusDiv.classList.add('status-selecionado'); 
+        } else {
+           
+            statusSpan.textContent = 'Opcional';
+            statusDiv.classList.remove('status-selecionado'); 
+        }
+        
+    });
+});
