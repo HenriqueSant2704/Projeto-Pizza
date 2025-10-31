@@ -17,7 +17,7 @@ body {
 }
 
 .menu-topo {
-    width: 80%;
+    width: 81%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +27,7 @@ body {
     position: fixed;
     top: 0px;
     background-color: white;
+    z-index: 1000000000;
 }
 
 .menu-topo .voltar {
@@ -205,16 +206,18 @@ body {
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 20px;
-    cursor: grab; 
+     
 }
 
 .lista-mais-pedidos::-webkit-scrollbar {
     height: 10px;
+    cursor: grab;
 }
 
 .lista-mais-pedidos::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 4px;
+    cursor: grab;
 }
 
 .card-pedidos {
@@ -248,9 +251,9 @@ body {
 
 .btn-add {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background-color: #2ecc71;
+    bottom: 5px;
+    right: 5px;
+    background-color: #03ae4a;
     color: #fff;
     font-size: 20px;
     border: none;
@@ -258,31 +261,53 @@ body {
     width: 28px;
     height: 28px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.2s;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .btn-add:hover {
     background-color: #27ae60;
+    transform: scale(1.1);
 }
 
-.controle-qtd {
-        width: 100%;
-        position: absolute;
-        bottom: 0px;
-        display: none; 
-        justify-content: space-around;
-        align-items: center;
-        background: rgba(228, 228, 228, 0.95);
+.card-pedidos.mostrando .btn-add {
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
 }
+
+
+.controle-qtd {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(238, 238, 238, 0.847);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  pointer-events: none; 
+}
+
+.card-pedidos.mostrando .controle-qtd {
+  transform: scaleX(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 
 .controle-qtd button {
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
-    color: #333;
-    font-weight: bold;
+    color: #000000;
+    font-weight: 700;
     padding: 4px;
 }
 
@@ -301,8 +326,9 @@ body {
 
 .card-pedidos span {
     margin: 5px 0 10px 10px;
-    color: #444;
-    font-weight: 500;
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 
@@ -339,3 +365,172 @@ body {
     right: 12px;
     cursor: pointer;
 }
+
+.caixa-sabores {
+    width: 80%;
+    padding: 15px 20px;
+    color: #333;
+    margin-top: 40px
+}
+
+.titulo-sabores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6f6f6;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.titulo-sabores h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.titulo-sabores span {
+    font-size: 14px;
+    color: #666;
+}
+
+.status-obrigatorio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-obrigatorio span {
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.status-obrigatorio.status-selecionado span {
+    background-color: #2ecc71; 
+}
+
+.status-obrigatorio .seta {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+}
+
+.lista-sabores {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.item-sabor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eaeaea;
+    padding: 0px 10px;
+    border-radius: 8px;
+    background: #fff;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+
+.item-sabor:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.164);
+}
+
+.item-sabor.selected {
+    border-left: solid 4px rgb(100, 100, 100);
+    background-color: #e6e6e676;
+}
+
+.item-sabor:last-child {
+    border-bottom: none;
+}
+
+.item-sabor img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.descricao-sabor {
+    flex: 1;
+}
+
+.descricao-sabor h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #222;
+}
+
+.descricao-sabor p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0 0 5px 0;
+}
+
+.descricao-sabor strong {
+    color: #000;
+    font-size: 14px;
+}
+
+.item-sabor input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2ecc71;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.item-sabor input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+
+.lista-sabores {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+
+.caixa-sabores.active .lista-sabores {
+    max-height: 800px; 
+    opacity: 1;
+}
+
+
+.titulo-sabores {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.titulo-sabores:hover {
+    background-color: #efefef;
+}
+
+
+.caixa-sabores .seta {
+    transition: transform 0.3s ease;
+}
+
+.caixa-sabores.active .seta {
+    transform: rotate(225deg);
+}
+

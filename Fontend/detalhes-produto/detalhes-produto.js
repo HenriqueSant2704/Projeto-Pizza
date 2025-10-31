@@ -1,8 +1,8 @@
-//=====================================================================
+//==============================================================================================================================
 
 // Carrossel dos card mais pedidos
 
-//=====================================================================
+//==============================================================================================================================
 
 const lista = document.querySelector('.lista-mais-pedidos');
 
@@ -35,11 +35,11 @@ lista.addEventListener('mousemove', (e) => {
   lista.scrollLeft = scrollLeft - walk;
 });
 
-//=====================================================================
+//==============================================================================================================================
 
 // Cards e controle de quantidade
 
-//=====================================================================
+//==============================================================================================================================
 
 const cards = document.querySelectorAll(".card-pedidos");
 
@@ -54,7 +54,6 @@ cards.forEach((card) => {
   let mouseDownX = 0;
   let mouseUpX = 0;
 
-
   card.addEventListener("mousedown", (e) => {
     mouseDownX = e.clientX;
   });
@@ -63,16 +62,12 @@ cards.forEach((card) => {
     mouseUpX = e.clientX;
     const diff = Math.abs(mouseDownX - mouseUpX);
     if (diff < 5) {
-
       if (!e.target.closest(".btn-add, .mais, .menos")) {
-        if (controle.style.display === "flex") {
-          controle.style.display = "none";
-          btnAdd.style.display = "block";
+        card.classList.toggle("mostrando");
+
+        if (!card.classList.contains("mostrando")) {
           qtd = 1;
           qtdSpan.textContent = qtd;
-        } else {
-          btnAdd.style.display = "none";
-          controle.style.display = "flex";
         }
       }
     }
@@ -80,8 +75,7 @@ cards.forEach((card) => {
 
   btnAdd.addEventListener("click", (e) => {
     e.stopPropagation();
-    btnAdd.style.display = "none";
-    controle.style.display = "flex";
+    card.classList.add("mostrando");
   });
 
   btnMais.addEventListener("click", (e) => {
@@ -94,8 +88,7 @@ cards.forEach((card) => {
     e.stopPropagation();
     qtd--;
     if (qtd <= 0) {
-      controle.style.display = "none";
-      btnAdd.style.display = "block";
+      card.classList.remove("mostrando");
       qtd = 1;
       qtdSpan.textContent = qtd;
     } else {
@@ -105,8 +98,74 @@ cards.forEach((card) => {
 });
 
 
-//=============================================================
 
-//
+//======================================================================================================================
 
-//=============================================================
+// esconder os sabores
+
+//======================================================================================================================
+
+const caixaSabores = document.querySelector('.caixa-sabores');
+const header = caixaSabores.querySelector('.select-header');
+
+header.addEventListener('click', () => {
+  caixaSabores.classList.toggle('active');
+});
+
+
+//======================================================================================================================
+
+// selecionar com a div
+
+//======================================================================================================================
+
+document.querySelectorAll('.item-sabor').forEach(item => {
+    
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (!checkbox) return; 
+
+    const caixaSabores = item.closest('.caixa-sabores');
+
+    const statusSpan = caixaSabores.querySelector('.status-obrigatorio span');
+ 
+    const statusDiv = caixaSabores.querySelector('.status-obrigatorio');
+    
+
+    item.addEventListener('click', (e) => {
+        
+        // Lógica para marcar/desmarcar
+        if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+        item.classList.toggle('selected', checkbox.checked);
+
+//=================================================================================================================
+
+// verifica se o checkbox esta selecionado ou nao, e muda o texto do status
+
+//==================================================================================================================
+
+    
+    const allCheckboxes = caixaSabores.querySelectorAll('.item-sabor input[type="checkbox"]');
+
+        
+    const isAnyChecked = Array.from(allCheckboxes).some(cb => cb.checked);
+
+       
+    if (isAnyChecked) {
+        statusSpan.textContent = 'Selecionado';
+        statusDiv.classList.add('status-selecionado'); 
+    } else {
+        statusSpan.textContent = 'Obrigatório';
+        statusDiv.classList.remove('status-selecionado'); 
+    }
+      
+    });
+});
+
+
+//======================================================================================================================
+
+
+
+//======================================================================================================================
