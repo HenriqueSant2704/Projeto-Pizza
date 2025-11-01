@@ -204,6 +204,7 @@ const overlayCarrinho = document.getElementById('overlayCarrinho');
 btnCarrinho.addEventListener('click', () => {
     carrinho.classList.add('ativo');
     overlayCarrinho.classList.add('ativo');
+    document.body.classList.add('carrinho-aberto');
 });
 
 fecharCarrinho.addEventListener('click', () => {

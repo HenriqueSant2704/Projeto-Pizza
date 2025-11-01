@@ -439,8 +439,8 @@ body.menu-aberto {
 .carrinho-lateral {
     position: fixed;
     top: 0;
-    right: -460px; 
-    width: 450px;
+    right: -500px; 
+    width: 480px;
     height: 100vh;
     background-color: #fff;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
@@ -448,6 +448,10 @@ body.menu-aberto {
     z-index: 1001;
     display: flex;
     flex-direction: column;
+}
+
+body.carrinho-aberto {
+  overflow: hidden;
 }
 
 .carrinho-lateral.ativo {
@@ -463,6 +467,8 @@ body.menu-aberto {
     border-bottom: 1px solid #ddd;
     background-color: #cc1919;
 }
+
+
 
 .carrinho-header h3 {
     font-size: 22px;
