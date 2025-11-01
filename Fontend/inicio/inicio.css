@@ -1631,7 +1631,7 @@ footer {
         right: -460px; 
         width: 400px;
         height: 100vh;
-        background-color: #fff;
+        background-color: #db0e0e;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
         transition: right 0.4s ease;
         z-index: 1001;
@@ -1644,7 +1644,7 @@ footer {
     }
 
     .carrinho-rodape {
-        height: 190px;
+        height: 150px;
 }
 
     .carrosel {
