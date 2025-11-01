@@ -190,58 +190,128 @@ if (caixaAdcionais) {
 
 //======================================================================================================================
 
+// selecionar com a div (para adicionais Especiais)
+
+//======================================================================================================================
+
+
+const caixaEspeciais = document.querySelector('.caixa-adcionais-especiais');
+
+if (caixaEspeciais) {
+    const headerEspeciais = caixaEspeciais.querySelector('.select-header');
+    const listaItens = caixaEspeciais.querySelectorAll('.item-adcionais-especiais');
+    const statusDiv = caixaEspeciais.querySelector('.status-adcionais-especiais');
+    const statusSpan = statusDiv.querySelector('span');
+
+  
+    headerEspeciais.addEventListener('click', () => {
+        caixaEspeciais.classList.toggle('active');
+    });
+
+    listaItens.forEach(item => {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+
+        item.addEventListener('click', (e) => {
+      
+            if (e.target === checkbox) return;
+
+            const jaSelecionado = item.classList.contains('selected');
+
+        
+            listaItens.forEach(i => {
+                i.classList.remove('selected');
+                i.querySelector('input[type="checkbox"]').checked = false;
+            });
+
+            if (jaSelecionado) {
+                statusSpan.textContent = 'Opcional';
+                statusDiv.classList.remove('status-selecionado');
+                return;
+            }
+
+            item.classList.add('selected');
+            checkbox.checked = true;
+
+            statusSpan.textContent = 'Selecionado';
+            statusDiv.classList.add('status-selecionado');
+        });
+    });
+}
+
+
+
+//======================================================================================================================
+
 // selecionar com a div (para adicionais)
 
 //======================================================================================================================
 
 
 document.querySelectorAll('.item-adcionais').forEach(item => {
-    
-    const checkbox = item.querySelector('input[type="checkbox"]');
-    if (!checkbox) return; 
-
-  
     const containerPai = item.closest('.caixa-adcionais');
-    if (!containerPai) return;
+    const statusDiv = containerPai?.querySelector('.status-opcional');
+    const statusSpan = statusDiv?.querySelector('span');
 
-    
-    const statusDiv = containerPai.querySelector('.status-opcional');
-    if (!statusDiv) return;
+    const controle = item.querySelector('.controle-quantidade');
+    const btnMais = controle.querySelector('.mais');
+    const btnMenos = controle.querySelector('.menos');
+    const qtdSpan = controle.querySelector('.quantidade');
 
-    const statusSpan = statusDiv.querySelector('span');
-    if (!statusSpan) return;
-    
-    
+    let quantidade = 0;
+
+
     item.addEventListener('click', (e) => {
-     
-        if (e.target !== checkbox) {
-            checkbox.checked = !checkbox.checked;
+        if (e.target === btnMais || e.target === btnMenos) return;
+        if (quantidade === 0) item.classList.toggle('active');
+    });
+
+    btnMais.addEventListener('click', () => {
+        quantidade++;
+        qtdSpan.textContent = quantidade;
+
+        if (!item.classList.contains('active')) item.classList.add('active');
+        item.classList.add('selected');
+
+        atualizarStatus(containerPai, statusDiv, statusSpan);
+    });
+
+    btnMenos.addEventListener('click', () => {
+        if (quantidade > 0) {
+            quantidade--;
+            qtdSpan.textContent = quantidade;
         }
-       
-        item.classList.toggle('selected', checkbox.checked);
-        
 
-//=================================================================================================================
-
-// verifica se o checkbox esta selecionado ou nao, e muda o texto do status
-
-//==================================================================================================================
-
-       
-        const allCheckboxes = containerPai.querySelectorAll('.item-adcionais input[type="checkbox"]');
-
-        
-        const isAnyChecked = Array.from(allCheckboxes).some(cb => cb.checked);
-
-        
-        if (isAnyChecked) {
-            statusSpan.textContent = 'Selecionado';
-            statusDiv.classList.add('status-selecionado'); 
-        } else {
-           
-            statusSpan.textContent = 'Opcional';
-            statusDiv.classList.remove('status-selecionado'); 
+        if (quantidade === 0) {
+            item.classList.remove('selected');
+            item.classList.remove('active');
         }
-        
+
+        atualizarStatus(containerPai, statusDiv, statusSpan);
     });
 });
+
+
+// ===============================================================
+
+// Função que verifica se existe algum item selecionado
+
+// ===============================================================
+
+
+function atualizarStatus(containerPai, statusDiv, statusSpan) {
+    const todasQuantidades = containerPai.querySelectorAll('.quantidade');
+    const existeSelecionado = Array.from(todasQuantidades)
+        .some(span => Number(span.textContent) > 0);
+
+    if (existeSelecionado) {
+        statusSpan.textContent = 'Selecionado';
+        statusDiv.classList.add('status-selecionado');
+    } else {
+        statusSpan.textContent = 'Opcional';
+        statusDiv.classList.remove('status-selecionado');
+    }
+}
+
+
+
+

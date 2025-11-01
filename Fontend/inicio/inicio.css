@@ -450,9 +450,7 @@ body.menu-aberto {
     flex-direction: column;
 }
 
-body.carrinho-aberto {
-  overflow: hidden;
-}
+
 
 .carrinho-lateral.ativo {
     right: 0; 
@@ -655,7 +653,6 @@ body.carrinho-aberto {
     max-width: 1515px;
     overflow: hidden;
     position: relative;
-
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 

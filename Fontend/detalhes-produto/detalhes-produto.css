@@ -489,16 +489,40 @@ body {
 }
 
 .item-sabor input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+
     width: 18px;
     height: 18px;
-    accent-color: #2ecc71;
+    border: 2px solid #29a95f; 
+    border-radius: 4px; 
     cursor: pointer;
-    transition: transform 0.2s;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: #fff; 
 }
 
+
 .item-sabor input[type="checkbox"]:hover {
-    transform: scale(1.1);
+    border-color: #29a95f; 
 }
+
+.item-sabor input[type="checkbox"]:checked {
+    background-color: #29a95f;
+    border-color: #29a95f;    
+}
+
+.item-sabor input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+}
+
 
 
 .lista-sabores {
@@ -533,6 +557,190 @@ body {
 .caixa-sabores.active .seta {
     transform: rotate(225deg);
 }
+
+
+.caixa-adcionais-especiais {
+    width: 80%;
+    padding: 15px 20px;
+    color: #333;
+    margin-top: 40px
+}
+
+.titulo-adcionais-especiais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6f6f6;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.titulo-adcionais-especiais h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.titulo-adcionais-especiais span {
+    font-size: 14px;
+    color: #666;
+}
+
+.status-adcionais-especiais {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-adcionais-especiais span {
+    background-color:   #6f6f6f;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.status-adcionais-especiais.status-selecionado span {
+    background-color: #2ecc71; 
+}
+
+.status-adcionais-especiais .seta {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+}
+
+.lista-adcionais-especiais {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.item-adcionais-especiais {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eaeaea;
+    padding: 0px 10px;
+    border-radius: 8px;
+    background: #fff;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+
+.item-adcionais-especiais:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.164);
+}
+
+.item-adcionais-especiais.selected {
+    border-left: solid 4px rgb(100, 100, 100);
+    background-color: #e6e6e676;
+}
+
+.item-adcionais-especiais:last-child {
+    border-bottom: none;
+}
+
+.item-adcionais-especiais img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.descricao-adcionais-especiais {
+    flex: 1;
+}
+
+.descricao-adcionais-especiais h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #222;
+}
+
+.descricao-adcionais-especiais p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0 0 5px 0;
+}
+
+.descricao-adcionais-especiais strong {
+    color: #000;
+    font-size: 14px;
+}
+
+.item-adcionais-especiais input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #29a95f;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.item-adcionais-especiais input[type="checkbox"]:checked {
+    background-color: #29a95f;
+}
+
+.item-adcionais-especiais input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.lista-adcionais-especiais {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+
+.caixa-adcionais-especiais.active .lista-adcionais-especiais {
+    max-height: 800px; 
+    opacity: 1;
+}
+
+
+.titulo-adcionais-especiais {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.titulo-adcionais-especiais:hover {
+    background-color: #efefef;
+}
+
+
+.caixa-adcionais-especiais .seta {
+    transition: transform 0.3s ease;
+}
+
+.caixa-adcionais-especiais.active .seta {
+    transform: rotate(225deg);
+}
+
 
 .caixa-adcionais {
     width: 80%;
@@ -655,17 +863,44 @@ body {
     font-size: 14px;
 }
 
-.item-adcionais input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #2ecc71;
+.controle-quantidade {
+    display: none; /* começa escondido */
+    align-items: center;
+    gap: 8px;
+    background: #f6f6f6;
+    border-radius: 6px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.item-adcionais.active .controle-quantidade {
+    display: flex; 
+}
+
+.controle-quantidade button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s;
 }
 
-.item-adcionais input[type="checkbox"]:hover {
+.controle-quantidade button:hover {
     transform: scale(1.1);
 }
+
+.quantidade {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
 
 
 .lista-adcionais {
@@ -701,174 +936,6 @@ body {
     transform: rotate(225deg);
 }
 
-
-.caixa-sabores {
-    width: 80%;
-    padding: 15px 20px;
-    color: #333;
-    margin-top: 40px
-}
-
-.titulo-sabores {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f6f6f6;
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-
-.titulo-sabores h2 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-}
-
-.titulo-sabores span {
-    font-size: 14px;
-    color: #666;
-}
-
-.status-obrigatorio {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.status-obrigatorio span {
-    background-color: #e74c3c;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 5px;
-}
-
-.status-obrigatorio.status-selecionado span {
-    background-color: #2ecc71; 
-}
-
-.status-obrigatorio .seta {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    transform: rotate(45deg);
-}
-
-.lista-sabores {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-
-.item-sabor {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #eaeaea;
-    padding: 0px 10px;
-    border-radius: 8px;
-    background: #fff;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
-}
-
-
-.item-sabor:hover {
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.164);
-}
-
-.item-sabor.selected {
-    border-left: solid 4px rgb(100, 100, 100);
-    background-color: #e6e6e676;
-}
-
-.item-sabor:last-child {
-    border-bottom: none;
-}
-
-.item-sabor img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.descricao-sabor {
-    flex: 1;
-}
-
-.descricao-sabor h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-    color: #222;
-}
-
-.descricao-sabor p {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.4;
-    margin: 0 0 5px 0;
-}
-
-.descricao-sabor strong {
-    color: #000;
-    font-size: 14px;
-}
-
-.item-sabor input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #2ecc71;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.item-sabor input[type="checkbox"]:hover {
-    transform: scale(1.1);
-}
-
-
-.lista-sabores {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.4s ease;
-}
-
-
-.caixa-sabores.active .lista-sabores {
-    max-height: 800px; 
-    opacity: 1;
-}
-
-
-.titulo-sabores {
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-.titulo-sabores:hover {
-    background-color: #efefef;
-}
-
-
-.caixa-sabores .seta {
-    transition: transform 0.3s ease;
-}
-
-.caixa-sabores.active .seta {
-    transform: rotate(225deg);
-}
 
 .caixa-observacao {
     width: 80%;
