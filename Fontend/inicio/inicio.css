@@ -1726,7 +1726,7 @@ footer {
 
     .card-add-pedidos {
         width: 250px;
-        flex: 0 0 250px;  
+        flex: 0 0 240px;  
     }
 
     .card-add-pedidos img {
@@ -1757,4 +1757,227 @@ footer {
     display: none;
 }
     
+}
+
+@media (max-width:405px) {
+    body {
+        margin-top: 70px;
+    }
+
+    .menu {
+        height: 70px;
+    }
+
+    .logo-menu {
+        width:39%;
+    }
+
+    .logo{
+        width: 85px;
+    }
+
+    .mais-menu img {
+        width: 37px;
+    }
+
+    .input-menu.show {
+        width: 100%;
+        margin-left: 0px;
+        position: fixed;
+        top: 75px;
+        
+    }
+
+    .input-menu input {
+        height: 43px;
+        transition: all 0.0s ease;
+    }
+
+    .iconis-menu {
+        width: 27%;
+    }
+
+    .iconis-menu img  {
+        width: 23px;
+    }
+
+    .user-menu {
+        top: 60px; 
+        right: 20px; 
+    }
+
+     .opcoes-user img {
+        width: 20px;
+        margin-left: 15px;
+    }
+
+    .sair img {
+        width: 23px;
+        margin-left: 15px;
+        
+    }
+
+    .carrinho-lateral {
+        position: fixed;
+        top: 0;
+        right: -460px; 
+        width: 360px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        transition: right 0.4s ease;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+}
+
+    .carrinho-header {
+        height: 35px;
+    }
+
+    .carrosel {
+        width: 100%;
+        height: 400px;
+    }
+
+
+
+    .btn-seta.esquerda {
+        left: 1%;
+    }
+    .btn-seta.direita {
+        right: 1%;
+    }
+
+    .card-mais-pedidos {
+        width: 250px;
+        height: 260px;
+        flex: 0 0 250px;  
+    }
+
+    .card-mais-pedidos img {
+        width: 160px;
+        height: 160px; 
+    }
+
+    .card-add-pedidos {
+        width: 250px;
+        flex: 0 0 235px;  
+    }
+
+}
+
+@media (max-width:370px) {
+    body {
+        margin-top: 64px;
+    }
+
+    .menu {
+        height: 65px;
+    }
+
+    .logo-menu {
+        width:40%;
+    }
+
+    .logo{
+        width: 83px;
+    }
+
+    .mais-menu img {
+        width: 36px;
+    }
+
+    .input-menu.show {
+        width: 100%;
+        margin-left: 0px;
+        position: fixed;
+        top: 75px;
+        
+    }
+
+    .input-menu input {
+        height: 40px;
+        transition: all 0.0s ease;
+    }
+
+    .iconis-menu {
+        width: 28%;
+    }
+
+    .iconis-menu img  {
+        width: 22px;
+    }
+
+    .user-menu {
+        top: 50px; 
+        right: 20px; 
+        height: 260px;
+    }
+
+     .opcoes-user img {
+        width: 20px;
+        margin-left: 15px;
+    }
+
+    .sair img {
+        width: 23px;
+        margin-left: 15px;
+        
+    }
+
+    .carrinho-lateral {
+        position: fixed;
+        top: 0;
+        right: -460px; 
+        width: 330px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        transition: right 0.4s ease;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-iten-imagem {
+        width: 75px;
+        height: 75px;
+    }
+
+
+    .carrinho-header {
+        height: 30px;
+    }
+
+    .carrosel {
+        width: 100%;
+        height: 400px;
+    }
+
+
+
+    .btn-seta.esquerda {
+        left: 1%;
+    }
+    .btn-seta.direita {
+        right: 1%;
+    }
+
+    .card-mais-pedidos {
+        width: 230px;
+        height: 260px;
+        flex: 0 0 228px;  
+    }
+
+    .card-mais-pedidos img {
+        width: 160px;
+        height: 160px; 
+    }
+
+    .card-add-pedidos {
+        width: 250px;
+        flex: 0 0 215px;  
+    }
+
 }
