@@ -1759,7 +1759,7 @@ footer {
     
 }
 
-@media (max-width:405px) {
+@media (max-width:390px) {
     body {
         margin-top: 70px;
     }
@@ -1867,7 +1867,7 @@ footer {
 
 }
 
-@media (max-width:370px) {
+@media (max-width:360px) {
     body {
         margin-top: 64px;
     }
