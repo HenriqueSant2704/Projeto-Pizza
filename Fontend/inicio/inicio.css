@@ -839,14 +839,14 @@ body.menu-aberto {
 
 .caixa-mais-pedidos {
     width: 100%;
-    height: 100px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     gap: 25px;
     padding: 35px 0px;
-    margin-bottom: 340px;
+    margin-bottom: 300px;
 }
 
 
@@ -889,6 +889,8 @@ body.menu-aberto {
 .carrossel-mais-pedidos {
     width: 85%;
     display: flex;
+    justify-content: start;
+    align-items: center;
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -929,6 +931,7 @@ body.menu-aberto {
 
 .card-mais-pedidos {
     width: 280px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -941,7 +944,7 @@ body.menu-aberto {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     border: 1px solid #f0f0f0;
     position: relative; 
-    flex: 0 0 280px;    
+    flex: 0 0 280px;   
 }
 
 .card-mais-pedidos img {
@@ -1120,10 +1123,9 @@ body.menu-aberto {
     transform: scale(0.98); 
 }
 
-
-
 .card-add-pedidos {
-    width: 280px;
+    width: 260px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1135,7 +1137,7 @@ body.menu-aberto {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     border: 1px solid #f0f0f0;
     position: relative; 
-    flex: 0 0 280px;
+    flex: 0 0 260px;
     cursor: pointer;
 
    &:hover {

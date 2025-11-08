@@ -342,7 +342,7 @@ body {
 }
 
 .pesquisa-sabor input {
-    width: 100%;
+    width: 90%;
     padding: 10px 40px 10px 40px;;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -357,14 +357,21 @@ body {
 
 .lupa {
     width: 20px;
-    left: 12px;
+    left: 25px;
 }
 
 .x {
-    width: 15px;
-    right: 12px;
+    width: 14px;
+    right: 30px;
     cursor: pointer;
+     transition: color 0.2s, transform 0.2s;
+
+    &:hover {
+        color:  #ffbdc0;
+        transform: rotate(90deg);
+    }
 }
+
 
 .caixa-sabores {
     width: 80%;
