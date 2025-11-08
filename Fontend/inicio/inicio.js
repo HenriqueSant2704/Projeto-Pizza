@@ -257,7 +257,7 @@ async function carregarCategorias() {
 
 function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containerPrincipal) {
   const caixa = document.createElement("div");
-  caixa.classList.add("caixa-mais-pedidos");
+  caixa.classList.add("caixa-mais-pedidos"); 
 
   // Título da seção
   const tituloDiv = document.createElement("div");
