@@ -217,55 +217,58 @@ overlayCarrinho.addEventListener('click', () => {
     overlayCarrinho.classList.remove('ativo');
 });
 
+//==============================================================
+// Carregar o Cardápio Novo (Categorias + Carrosséis Dinâmicos)
+//==============================================================
 
-//================================================================
-
-// Carregar as Pizzas (Salgadas e Doces)
-
-//=================================================================
-
-
-
-async function carregarCategorias() {
+async function carregarCardapio() {
   try {
-    const resposta = await fetch("http://localhost:3000/pizzas");
-    const dados = await resposta.json();
+    const resposta = await fetch("http://localhost:3000/api/cardapio");
+    const categorias = await resposta.json();
 
     const containerPrincipal = document.querySelector(".container-produtos");
-    containerPrincipal.innerHTML = ""; 
+    containerPrincipal.innerHTML = "";
 
-    // Cria carrossel das pizzas salgadas
-    if (dados.salgadas && dados.salgadas.length > 0) {
-      criarCarrosselCategoria("Pizzas Salgadas", dados.salgadas, true, containerPrincipal);
-    }
+    categorias.forEach(categoria => {
+      const nomeCategoria = categoria.nome_categoria || categoria.nome;
 
-    // Cria carrossel das pizzas doces
-    if (dados.doces && dados.doces.length > 0) {
-      criarCarrosselCategoria("Pizzas Doces", dados.doces, true, containerPrincipal);
-    }
+      // Exemplo: categoria.carrosseis = { Salgada:[...], Doce:[...] }
+      const carrosseis = categoria.carrosseis;
+
+      if (!carrosseis) return;
+
+      // Para cada "tipo_sabor" dentro da categoria, criamos um carrossel
+      for (const tipo in carrosseis) {
+        const listaProdutos = carrosseis[tipo];
+
+        // Criar carrossel
+        criarCarrosselCategoria(
+          `${nomeCategoria} – ${tipo}`,
+          listaProdutos,
+          categoria.nome_categoria === "Pizzas" && tipo === "Salgada",
+          containerPrincipal
+        );
+      }
+    });
 
   } catch (erro) {
-    console.error("Erro ao carregar categorias:", erro);
+    console.error("Erro ao carregar cardápio:", erro);
   }
 }
 
-//================================================================]
-
-// Função que cria o carrossel]
-
-//================================================================
+//==============================================================
+// Criar Carrossel (mesmo do código antigo, só adaptado)
+//==============================================================
 
 function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containerPrincipal) {
   const caixa = document.createElement("div");
-  caixa.classList.add("caixa-mais-pedidos"); 
+  caixa.classList.add("caixa-mais-pedidos");
 
-  // Título da seção
   const tituloDiv = document.createElement("div");
   tituloDiv.classList.add("titulo");
   tituloDiv.innerHTML = `<h3>${titulo}</h3>`;
   caixa.appendChild(tituloDiv);
 
-  // Container do carrossel
   const carrosselContainer = document.createElement("div");
   carrosselContainer.classList.add("carrossel-container");
 
@@ -280,7 +283,7 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
   const carrossel = document.createElement("div");
   carrossel.classList.add("carrossel-mais-pedidos");
 
-  // Card "Monte sua Pizza" (apenas nas salgadas)
+  // Card "Monte sua pizza"
   if (temMontarPizza) {
     const cardMontar = document.createElement("div");
     cardMontar.classList.add("card-add-pedidos");
@@ -294,36 +297,38 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
     carrossel.appendChild(cardMontar);
   }
 
-  // Cards das pizzas vindas do banco
+  // Criar cada card de produto vindo do banco
   listaProdutos.forEach(produto => {
     const card = document.createElement("div");
     card.classList.add("card-mais-pedidos");
 
     card.innerHTML = `
-      <img src="${produto.imagem_url}" alt="${produto.descricao}">
+      <img src="http://localhost:3000${produto.imagem}" alt="${produto.descricao}">
       <div class="descricao-mais-pedidos">
           <h3>${produto.descricao}</h3>
-          <p><span>${produto.tamanho || "Médio"}</span></p>
-          <p><span>A partir de</span> <strong>R$ ${produto.valor_total.toFixed(2)}</strong></p>
+          <p><span>${produto.tamanho || ""}</span></p>
+          <p><span>A partir de</span> 
+             <strong>R$ ${Number(produto.valor).toFixed(2)}</strong></p>
           <button class="btn-pedir">Pedir Agora</button>
       </div>
 
       <div class="overlay-card">
           <h3>${produto.descricao}</h3>
-          <a href="./Frontend/detalhes-produto/detalhes-produto.html?id=${produto.id}" class="detalhes">+ Detalhes</a>
+          <a href="./Frontend/detalhes-produto/detalhes-produto.html?id=${produto.id_montarProduto}" class="detalhes">+ Detalhes</a>
           <div class="quantidade">
               <button class="menos">-</button>
               <span class="valor">1</span>
               <button class="mais">+</button>
           </div>
           <button class="adicionar">Adicionar</button>
-          <p class="total">Total: <strong>R$ ${produto.valor_total.toFixed(2)}</strong></p>
+          <p class="total">Total: <strong>R$ ${Number(produto.valor).toFixed(2)}</strong></p>
       </div>
     `;
+
     carrossel.appendChild(card);
   });
 
-  // Card "Ver Mais"
+  // Card "Ver mais"
   const cardVerMais = document.createElement("div");
   cardVerMais.classList.add("card-add-pedidos");
   cardVerMais.innerHTML = `
@@ -336,14 +341,12 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
   `;
   carrossel.appendChild(cardVerMais);
 
-  // Montagem final
   carrosselContainer.appendChild(btnEsquerda);
   carrosselContainer.appendChild(carrossel);
   carrosselContainer.appendChild(btnDireita);
   caixa.appendChild(carrosselContainer);
   containerPrincipal.appendChild(caixa);
 
-  // Funcionalidade das setas
   btnEsquerda.addEventListener("click", () => {
     carrossel.scrollBy({ left: -220, behavior: "smooth" });
   });
@@ -352,5 +355,6 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
   });
 }
 
-// Chama a função
-carregarCategorias();
+// Iniciar
+carregarCardapio();
+
