@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayCarrinho.classList.remove("ativo");
         document.body.style.overflow = "";
     }
-    document.addEventListener("DOMContentLoaded", () => {
 
+    document.addEventListener("DOMContentLoaded", () => {
     if (btnCarrinho) {
         btnCarrinho.addEventListener("click", abrirCarrinho);
     }
@@ -425,7 +425,7 @@ document.addEventListener("click", async (e) => {
             console.log("Item adicionado ao carrinho:", resultado);
 
             atualizarBadgeSemAbrir();
-      
+            
 
         } catch (erro) {
             console.error("Erro ao adicionar ao carrinho:", erro);
