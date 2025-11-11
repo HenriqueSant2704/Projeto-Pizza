@@ -160,65 +160,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==========================================
-// hover Cards
-//===========================================
+// ======================================================
+// Abrir / Fechar Carrinho Lateral
+// ======================================================
 
-document.querySelectorAll('.card-mais-pedidos').forEach(card => {
-    const menos = card.querySelector('.menos');
-    const mais = card.querySelector('.mais');
-    const valor = card.querySelector('.valor');
-    const total = card.querySelector('.total strong');
-    
-    if (!menos || !mais) return;
 
-    let quantidade = 1;
-    const precoUnitario = 75.00; // valor base da pizza
+    const btnCarrinho = document.querySelector('.iconis-menu button:last-child'); 
+    const carrinhoLateral = document.getElementById('carrinhoLateral');
+    const overlayCarrinho = document.getElementById('overlayCarrinho');
+    const fecharCarrinho = document.getElementById('fecharCarrinho');
 
-    mais.addEventListener('click', () => {
-        quantidade++;
-        valor.textContent = quantidade;
-        total.textContent = `R$ ${(quantidade * precoUnitario).toFixed(2).replace('.', ',')}`;
-    });
+    function abrirCarrinho() {
+      if (!carrinhoLateral || !overlayCarrinho) return; 
+        carrinhoLateral.classList.add("ativo");
+        overlayCarrinho.classList.add("ativo");
+        document.body.style.overflow = "hidden";
+        carregarCarrinhoFrontEnd();
+    }
 
-    menos.addEventListener('click', () => {
-        if (quantidade > 1) {
-            quantidade--;
-            valor.textContent = quantidade;
-            total.textContent = `R$ ${(quantidade * precoUnitario).toFixed(2).replace('.', ',')}`;
-        }
-    });
+    function fecharCarrinhoFunc() {
+      if (!carrinhoLateral || !overlayCarrinho) return
+        carrinhoLateral.classList.remove("ativo");
+        overlayCarrinho.classList.remove("ativo");
+        document.body.style.overflow = "";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+
+    if (btnCarrinho) {
+        btnCarrinho.addEventListener("click", abrirCarrinho);
+    }
+
+    if (fecharCarrinho) {
+        fecharCarrinho.addEventListener("click", fecharCarrinhoFunc);
+    }
+
+    if (overlayCarrinho) {
+        overlayCarrinho.addEventListener("click", fecharCarrinhoFunc);
+    }
 });
 
-// ==========================================
 
-// Casriinho de compras
-
-//===========================================
-
-const btnCarrinho = document.querySelector('.iconis-menu button:last-child'); 
-const carrinho = document.getElementById('carrinhoLateral');
-const fecharCarrinho = document.getElementById('fecharCarrinho');
-const overlayCarrinho = document.getElementById('overlayCarrinho');
-
-btnCarrinho.addEventListener('click', () => {
-    carrinho.classList.add('ativo');
-    overlayCarrinho.classList.add('ativo');
-    document.body.classList.add('carrinho-aberto');
-});
-
-fecharCarrinho.addEventListener('click', () => {
-    carrinho.classList.remove('ativo');
-    overlayCarrinho.classList.remove('ativo');
-});
-
-overlayCarrinho.addEventListener('click', () => {
-    carrinho.classList.remove('ativo');
-    overlayCarrinho.classList.remove('ativo');
-});
 
 //==============================================================
+
 // Carregar o Cardápio Novo (Categorias + Carrosséis Dinâmicos)
+
 //==============================================================
 
 async function carregarCardapio() {
@@ -232,12 +218,12 @@ async function carregarCardapio() {
     categorias.forEach(categoria => {
       const nomeCategoria = categoria.nome_categoria || categoria.nome;
 
-      // Exemplo: categoria.carrosseis = { Salgada:[...], Doce:[...] }
+    
       const carrosseis = categoria.carrosseis;
 
       if (!carrosseis) return;
 
-      // Para cada "tipo_sabor" dentro da categoria, criamos um carrossel
+   
       for (const tipo in carrosseis) {
         const listaProdutos = carrosseis[tipo];
 
@@ -257,7 +243,9 @@ async function carregarCardapio() {
 }
 
 //==============================================================
-// Criar Carrossel (mesmo do código antigo, só adaptado)
+
+// Criar Carrossel
+
 //==============================================================
 
 function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containerPrincipal) {
@@ -312,7 +300,7 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
           <button class="btn-pedir">Pedir Agora</button>
       </div>
 
-      <div class="overlay-card">
+      <div class="overlay-card" data-id="${produto.id_montarProduto}">
           <h3>${produto.descricao}</h3>
           <a href="./Frontend/detalhes-produto/detalhes-produto.html?id=${produto.id_montarProduto}" class="detalhes">+ Detalhes</a>
           <div class="quantidade">
@@ -321,7 +309,13 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
               <button class="mais">+</button>
           </div>
           <button class="adicionar">Adicionar</button>
-          <p class="total">Total: <strong>R$ ${Number(produto.valor).toFixed(2)}</strong></p>
+          <p class="total">
+            Total: 
+            <strong data-preco="${produto.valor}">
+              R$ ${Number(produto.valor).toFixed(2)}
+            </strong>
+          </p>
+
       </div>
     `;
 
@@ -355,6 +349,316 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
   });
 }
 
-// Iniciar
 carregarCardapio();
+atualizarBadgeSemAbrir();
+
+
+// ======================================================
+
+// Controle de quantidade nos cards dinâmicos
+
+// ======================================================
+
+document.addEventListener("click", (e) => {
+
+    // Botão +
+    if (e.target.classList.contains("mais")) {
+        const card = e.target.closest(".overlay-card");
+        const valor = card.querySelector(".valor");
+        const total = card.querySelector(".total strong");
+
+        let quantidade = Number(valor.textContent);
+        quantidade++;
+
+        valor.textContent = quantidade;
+
+        const precoUnitario = Number(total.dataset.preco);
+        total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
+    }
+
+    // Botão -
+    if (e.target.classList.contains("menos")) {
+        const card = e.target.closest(".overlay-card");
+        const valor = card.querySelector(".valor");
+        const total = card.querySelector(".total strong");
+
+        let quantidade = Number(valor.textContent);
+
+        if (quantidade > 1) {
+            quantidade--;
+            valor.textContent = quantidade;
+
+            const precoUnitario = Number(total.dataset.preco);
+            total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
+        }
+    }
+});
+
+// ======================================================
+
+// ADICIONAR AO CARRINHO - Dinâmico
+
+// ======================================================
+document.addEventListener("click", async (e) => {
+
+    if (e.target.classList.contains("adicionar")) {
+
+        const card = e.target.closest(".overlay-card");
+
+        const idProduto = card.dataset.id;
+        const quantidade = Number(card.querySelector(".valor").textContent);
+        const precoUnitario = Number(card.querySelector(".total strong").dataset.preco);
+        const total = precoUnitario * quantidade;
+
+        try {
+            const resposta = await fetch("http://localhost:3000/api/carrinho/add", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id_montarProduto: idProduto,
+                    quantidade,
+                    valor_total: total
+                })
+            });
+
+            const resultado = await resposta.json();
+            console.log("Item adicionado ao carrinho:", resultado);
+
+            atualizarBadgeSemAbrir();
+            abrirCarrinho();
+
+        } catch (erro) {
+            console.error("Erro ao adicionar ao carrinho:", erro);
+        }
+    }
+});
+
+// ========================================================================================================================
+
+// FUNÇÃO DE LISTAR A QUANTIDADE DE ITEN DENTTRO DO CARRINHO
+
+// ========================================================================================================================
+
+
+function atualizarBadgeCarrinho(lista) {
+    const badge = document.getElementById("badge-carrinho");
+    if (!badge) return;
+
+    const quantidadeTotal = lista.reduce((acc, item) => acc + Number(item.quantidade), 0);
+
+    if (quantidadeTotal >= 0 ) {
+        badge.textContent = quantidadeTotal;
+        badge.style.display = "flex";
+    } else {
+        badge.style.display = "none";
+    }
+}
+
+async function atualizarBadgeSemAbrir() {
+    try {
+        const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+        const itens = await resposta.json();
+
+        atualizarBadgeCarrinho(itens);
+
+    } catch (erro) {
+        console.error("Erro ao atualizar badge:", erro);
+    }
+}
+
+
+
+// ========================================================================================================================
+
+// FUNÇÃO DE BUSCAR E LISTAR OS ITENS DO CARRINHO
+
+// ========================================================================================================================
+
+async function carregarCarrinhoFrontEnd() {
+    try {
+        const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+        const itens = await resposta.json();
+
+        renderizarCarrinho(itens);
+        atualizarBadgeCarrinho(itens);
+        atualizarBadgeSemAbrir();
+
+    } catch (erro) {
+        console.error("Erro ao carregar carrinho:", erro);
+    }
+}
+
+// ========================================================================================================================
+
+// ESTRTURA DOS INTENS LISTADOS (CARRINHO)
+
+// ========================================================================================================================
+
+function renderizarCarrinho(lista) {
+    const area = document.getElementById("itensCarrinho");
+
+    if (!area) {
+        console.warn("Container #itensCarrinho não encontrado.");
+        return;
+    }
+
+    area.innerHTML = "";
+
+    if (!lista || lista.length === 0) {
+    area.innerHTML = `
+        <div class="carrinho-vazio">
+            <p>Seu carrinho está vazio.</p>
+            <img src="./assets/icons/Carrinho/carrinho-vazio.png" alt="Carrinho vazio">
+        </div>
+    `;
+    atualizarTotalCarrinho([]);
+    return;
+}
+
+
+    lista.forEach(item => {
+        const div = document.createElement("div");
+        div.classList.add("card-iten");
+
+        
+        const imagem = "./assets/icons/categoria/comida.png";
+
+        div.innerHTML = `
+            <div class="card-iten-imagem">
+                <img src="${imagem}">
+            </div>
+
+            <div class="iten-detalhe">
+                <label>${item.nome_produto || "Produto"}</label>
+                <span>R$ ${Number(item.valor_total).toFixed(2).replace('.', ',')}</span>
+
+                <div class="iten-quantidade">
+                    <button class="decrementar" data-id="${item.id_carrinho}">-</button>
+                    <span class="quantidade-valor">${item.quantidade}</span>
+                    <button class="incrementar" data-id="${item.id_carrinho}">+</button>
+                </div>
+            </div>
+
+            <div class="iten-remover">
+                <button class="remover-iten" data-id="${item.id_carrinho}">
+                    <img src="./assets/icons/Carrinho/desperdicio.png" alt="">
+                </button>
+            </div>
+        `;
+
+        area.appendChild(div);
+    });
+
+    atualizarTotalCarrinho(lista);
+}
+
+
+// ========================================================================================================================
+
+// DELETA O ITEM DO CARRINHO
+
+// ========================================================================================================================
+
+document.addEventListener("click", async (e) => {
+  if (e.target.closest(".remover-iten")) {
+    const btn = e.target.closest(".remover-iten");
+    const idCarrinho = btn.dataset.id;
+
+    try {
+      const resposta = await fetch(`http://localhost:3000/api/carrinho/deletar/${idCarrinho}`, {
+        method: "DELETE"
+      });
+
+      const resultado = await resposta.json();
+      console.log("Item removido:", resultado);
+
+      
+      carregarCarrinhoFrontEnd();
+      atualizarBadgeSemAbrir();
+
+    } catch (erro) {
+      console.error("Erro ao remover item:", erro);
+    }
+  }
+});
+
+// ========================================================================================================================
+
+// ALTERAR QUANTIDADE (+ e -)
+
+// ========================================================================================================================
+
+document.addEventListener("click", async (e) => {
+
+   
+    if (e.target.classList.contains("incrementar")) {
+
+        const id = e.target.dataset.id;
+
+        const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
+        let quantidadeAtual = Number(quantSpan.textContent);
+        const novaQuantidade = quantidadeAtual + 1;
+
+        try {
+            await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ quantidade: novaQuantidade })
+            });
+
+            carregarCarrinhoFrontEnd();
+            atualizarBadgeSemAbrir();
+
+        } catch (erro) {
+            console.error("Erro ao aumentar quantidade:", erro);
+        }
+    }
+
+    
+    if (e.target.classList.contains("decrementar")) {
+
+        const id = e.target.dataset.id;
+
+        const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
+        let quantidadeAtual = Number(quantSpan.textContent);
+
+        if (quantidadeAtual <= 1) return;
+
+        const novaQuantidade = quantidadeAtual - 1;
+
+        try {
+            await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ quantidade: novaQuantidade })
+            });
+
+            carregarCarrinhoFrontEnd();
+            atualizarBadgeSemAbrir();
+
+        } catch (erro) {
+            console.error("Erro ao diminuir quantidade:", erro);
+        }
+    }
+});
+
+// ========================================================================================================================
+
+// ATUALIZA O VALOR TOTAL 
+
+// ========================================================================================================================
+
+function atualizarTotalCarrinho(lista) {
+    const elementoTotal = document.querySelector(".total-valor");
+    if (!elementoTotal) return;
+
+    if (!lista || lista.length === 0) {
+        elementoTotal.textContent = "R$ 0,00";
+        return;
+    }
+
+    const total = lista.reduce((soma, item) => soma + Number(item.valor_total), 0);
+    elementoTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+}
+
 

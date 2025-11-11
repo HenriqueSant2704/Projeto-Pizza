@@ -521,6 +521,41 @@ body.menu-aberto {
     margin-top: 20px;
 }
 
+.carrinho-vazio {
+    display: flex;
+    height: 85%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.carrinho-vazio img {
+    width: 140px;  
+    margin-right: 10px; 
+    height: auto;
+     
+}
+
+.btn-carrinho {
+    position: relative;
+}
+
+.badge-carrinho {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ffcc00; 
+    color: #000;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    
+}
+
 .card-iten {
     display: flex;
     justify-content: space-between;

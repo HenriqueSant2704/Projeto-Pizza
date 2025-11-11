@@ -63,9 +63,12 @@
                 </div>
             </div>
 
-            <button>
+            <button class="btn-carrinho">
                 <img src="./assets/icons/menu/carrinho-carrinho.png" alt="">
+                <span id="badge-carrinho" class="badge-carrinho">0</span>
             </button>
+
+
         </div>
     </div>
 
@@ -75,112 +78,12 @@
             <button class="fechar-carrinho" id="fecharCarrinho">&times;</button>
         </div>
 
-        <div class="carrinho-conteudo">
-            <div class="card-iten">
-                <div class="card-iten-imagem">
-                    <img src="./assets/icons/categoria/comida.png">
-                </div>
-
-                <div class="iten-detalhe">
-                    <label>Margherita</label>
-                    <span>R$ 29,90</span>
-                    <div class="iten-quantidade">
-                        <button class="decrementar">-</button>
-                        <span class="quantidade-valor">1</span>
-                        <button class="incrementar">+</button>
-                    </div>
-                </div>
-
-                <div class="iten-remover">
-                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
-                </div>
-            </div>
-
-            <div class="card-iten">
-                <div class="card-iten-imagem">
-                    <img src="./assets/icons/categoria/comida.png">
-                </div>
-
-                <div class="iten-detalhe">
-                    <label>Margherita</label>
-                    <span>R$ 29,90</span>
-                    <div class="iten-quantidade">
-                        <button class="decrementar">-</button>
-                        <span class="quantidade-valor">1</span>
-                        <button class="incrementar">+</button>
-                    </div>
-                </div>
-
-                <div class="iten-remover">
-                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
-                </div>
-            </div>
-
-            <div class="card-iten">
-                <div class="card-iten-imagem">
-                    <img src="./assets/icons/categoria/comida.png">
-                </div>
-
-                <div class="iten-detalhe">
-                    <label>Margherita</label>
-                    <span>R$ 29,90</span>
-                    <div class="iten-quantidade">
-                        <button class="decrementar">-</button>
-                        <span class="quantidade-valor">1</span>
-                        <button class="incrementar">+</button>
-                    </div>
-                </div>
-
-                <div class="iten-remover">
-                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
-                </div>
-            </div>
-
-            <div class="card-iten">
-                <div class="card-iten-imagem">
-                    <img src="./assets/icons/categoria/comida.png">
-                </div>
-
-                <div class="iten-detalhe">
-                    <label>Margherita</label>
-                    <span>R$ 29,90</span>
-                    <div class="iten-quantidade">
-                        <button class="decrementar">-</button>
-                        <span class="quantidade-valor">1</span>
-                        <button class="incrementar">+</button>
-                    </div>
-                </div>
-
-                <div class="iten-remover">
-                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
-                </div>
-            </div>
-
-            <div class="card-iten">
-                <div class="card-iten-imagem">
-                    <img src="./assets/icons/categoria/comida.png">
-                </div>
-
-                <div class="iten-detalhe">
-                    <label>Margherita</label>
-                    <span>R$ 29,90</span>
-                    <div class="iten-quantidade">
-                        <button class="decrementar">-</button>
-                        <span class="quantidade-valor">1</span>
-                        <button class="incrementar">+</button>
-                    </div>
-                </div>
-
-                <div class="iten-remover">
-                    <button class="remover-iten"><img src="./assets/icons/Carrinho/desperdicio.png" alt=""></button>
-                </div>
-            </div>
-        </div>
+        <div class="carrinho-conteudo" id="itensCarrinho"></div>
 
         <div class="carrinho-rodape">
             <div class="total-total">
                 <span>Total:</span>
-                <span class="total-valor">R$ 29,90</span>
+                <span class="total-valor">R$ 0,00</span>
             </div>
             <button class="finalizar-pedido">Finalizar Pedido</button>
         </div>
@@ -434,13 +337,13 @@
         </div>
     </div>
 
-    
+
     <!--Pizzas salgadas ------------------------------------------------------------------------->
 
 
     <section class="container-produtos">
-    <!-- Os carrosséis serão inseridos aqui automaticamente pelo JS -->
-</section>
+        <!-- Os carrosséis serão inseridos aqui automaticamente pelo JS -->
+    </section>
 
 
 

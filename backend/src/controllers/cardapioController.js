@@ -18,7 +18,7 @@ export async function getCardapio(req, res) {
         }
 
         carrosseis[tipo].push({
-          id: item.id_montarProduto,
+          id_montarProduto: item.id_montarProduto,
           nome: item.nome_produto,
           descricao: item.descricao_montada || item.desc_produto,
           imagem: item.imagem_url,
