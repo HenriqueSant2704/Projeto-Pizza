@@ -425,7 +425,7 @@ document.addEventListener("click", async (e) => {
             console.log("Item adicionado ao carrinho:", resultado);
 
             atualizarBadgeSemAbrir();
-            abrirCarrinho();
+      
 
         } catch (erro) {
             console.error("Erro ao adicionar ao carrinho:", erro);
