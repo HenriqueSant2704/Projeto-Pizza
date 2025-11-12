@@ -4,7 +4,7 @@
 
 // pesquisa (Input)
 
-const menuLupa = document.querySelector('.iconis-menu button:first-child'); 
+const menuLupa = document.querySelector('.iconis-menu button:first-child');
 const inputMenu = document.querySelector('.input-menu');
 const inputField = document.querySelector('.input-menu input');
 const btnFechar = document.querySelector('.input-menu .X');
@@ -17,7 +17,7 @@ menuLupa.addEventListener('click', () => {
 
   inputMenu.classList.add('show');
   inputField.focus();
-  
+
 });
 
 
@@ -64,11 +64,11 @@ const carrosel = document.querySelector('.carrosel');
 let autoSlideInterval = setInterval(nextSlide, 7000);
 
 carrosel.addEventListener('mouseenter', () => {
-  clearInterval(autoSlideInterval); 
+  clearInterval(autoSlideInterval);
 });
 
 carrosel.addEventListener('mouseleave', () => {
-  autoSlideInterval = setInterval(nextSlide, 7000); 
+  autoSlideInterval = setInterval(nextSlide, 7000);
 });
 
 
@@ -79,25 +79,25 @@ carrosel.addEventListener('mouseleave', () => {
 //=========================================================================
 
 document.querySelectorAll('.carrossel-container').forEach(container => {
-    const carrossel = container.querySelector('.carrossel-mais-pedidos');
-    const btnEsquerda = container.querySelector('.btn-seta.esquerda');
-    const btnDireita = container.querySelector('.btn-seta.direita');
+  const carrossel = container.querySelector('.carrossel-mais-pedidos');
+  const btnEsquerda = container.querySelector('.btn-seta.esquerda');
+  const btnDireita = container.querySelector('.btn-seta.direita');
 
-    const scrollAmount = 300; 
+  const scrollAmount = 300;
 
-    btnEsquerda.addEventListener('click', () => { 
-        carrossel.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+  btnEsquerda.addEventListener('click', () => {
+    carrossel.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
     });
+  });
 
-    btnDireita.addEventListener('click', () => {
-        carrossel.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+  btnDireita.addEventListener('click', () => {
+    carrossel.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
     });
+  });
 });
 ;
 
@@ -109,16 +109,16 @@ const btnUser = document.querySelector('.btn-user');
 const userMenu = document.querySelector('.user-menu');
 
 btnUser.addEventListener('click', () => {
-    userMenu.style.display = userMenu.style.display === 'flex' ? 'none' : 'flex';
+  userMenu.style.display = userMenu.style.display === 'flex' ? 'none' : 'flex';
 });
 
 document.addEventListener('click', (e) => {
-    if (!btnUser.contains(e.target) && !userMenu.contains(e.target)) {
-        userMenu.style.display = 'none';
-    }
+  if (!btnUser.contains(e.target) && !userMenu.contains(e.target)) {
+    userMenu.style.display = 'none';
+  }
 });
 
-  
+
 // ==========================================
 
 // Menu do Lateral
@@ -126,38 +126,38 @@ document.addEventListener('click', (e) => {
 //===========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    const btnAbrir = document.querySelector('.mais-menu'); 
-    const btnFechar = document.getElementById('btn-fechar-menu');
-    const menuLateral = document.getElementById('menu-lateral');
-    const overlay = document.getElementById('menu-overlay');
+  const btnAbrir = document.querySelector('.mais-menu');
+  const btnFechar = document.getElementById('btn-fechar-menu');
+  const menuLateral = document.getElementById('menu-lateral');
+  const overlay = document.getElementById('menu-overlay');
 
-    function abrirMenu() {
-        if (menuLateral && overlay) { 
-            menuLateral.classList.add('visivel');
-            overlay.classList.add('visivel');
-            document.body.classList.add('menu-aberto');
-        }
+  function abrirMenu() {
+    if (menuLateral && overlay) {
+      menuLateral.classList.add('visivel');
+      overlay.classList.add('visivel');
+      document.body.classList.add('menu-aberto');
     }
+  }
 
-    function fecharMenu() {
-        if (menuLateral && overlay) { 
-            menuLateral.classList.remove('visivel');
-            overlay.classList.remove('visivel');
-            document.body.classList.remove('menu-aberto'); 
-        }
+  function fecharMenu() {
+    if (menuLateral && overlay) {
+      menuLateral.classList.remove('visivel');
+      overlay.classList.remove('visivel');
+      document.body.classList.remove('menu-aberto');
     }
-    
-    if (btnAbrir) {
-        btnAbrir.addEventListener('click', abrirMenu);
-    }
+  }
 
-    if (btnFechar) {
-        btnFechar.addEventListener('click', fecharMenu);
-    }
+  if (btnAbrir) {
+    btnAbrir.addEventListener('click', abrirMenu);
+  }
 
-    if (overlay) {
-        overlay.addEventListener('click', fecharMenu);
-    }
+  if (btnFechar) {
+    btnFechar.addEventListener('click', fecharMenu);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', fecharMenu);
+  }
 });
 
 // ======================================================
@@ -165,38 +165,38 @@ document.addEventListener('DOMContentLoaded', () => {
 // ======================================================
 
 
-    const btnCarrinho = document.querySelector('.iconis-menu button:last-child'); 
-    const carrinhoLateral = document.getElementById('carrinhoLateral');
-    const overlayCarrinho = document.getElementById('overlayCarrinho');
-    const fecharCarrinho = document.getElementById('fecharCarrinho');
+const btnCarrinho = document.querySelector('.iconis-menu button:last-child');
+const carrinhoLateral = document.getElementById('carrinhoLateral');
+const overlayCarrinho = document.getElementById('overlayCarrinho');
+const fecharCarrinho = document.getElementById('fecharCarrinho');
 
-    function abrirCarrinho() {
-      if (!carrinhoLateral || !overlayCarrinho) return; 
-        carrinhoLateral.classList.add("ativo");
-        overlayCarrinho.classList.add("ativo");
-        document.body.style.overflow = "hidden";
-        carregarCarrinhoFrontEnd();
-    }
+function abrirCarrinho() {
+  if (!carrinhoLateral || !overlayCarrinho) return;
+  carrinhoLateral.classList.add("ativo");
+  overlayCarrinho.classList.add("ativo");
+  document.body.style.overflow = "hidden";
+  carregarCarrinhoFrontEnd();
+}
 
-    function fecharCarrinhoFunc() {
-      if (!carrinhoLateral || !overlayCarrinho) return
-        carrinhoLateral.classList.remove("ativo");
-        overlayCarrinho.classList.remove("ativo");
-        document.body.style.overflow = "";
-    }
+function fecharCarrinhoFunc() {
+  if (!carrinhoLateral || !overlayCarrinho) return
+  carrinhoLateral.classList.remove("ativo");
+  overlayCarrinho.classList.remove("ativo");
+  document.body.style.overflow = "";
+}
 
-    document.addEventListener("DOMContentLoaded", () => {
-    if (btnCarrinho) {
-        btnCarrinho.addEventListener("click", abrirCarrinho);
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  if (btnCarrinho) {
+    btnCarrinho.addEventListener("click", abrirCarrinho);
+  }
 
-    if (fecharCarrinho) {
-        fecharCarrinho.addEventListener("click", fecharCarrinhoFunc);
-    }
+  if (fecharCarrinho) {
+    fecharCarrinho.addEventListener("click", fecharCarrinhoFunc);
+  }
 
-    if (overlayCarrinho) {
-        overlayCarrinho.addEventListener("click", fecharCarrinhoFunc);
-    }
+  if (overlayCarrinho) {
+    overlayCarrinho.addEventListener("click", fecharCarrinhoFunc);
+  }
 });
 
 
@@ -218,12 +218,12 @@ async function carregarCardapio() {
     categorias.forEach(categoria => {
       const nomeCategoria = categoria.nome_categoria || categoria.nome;
 
-    
+
       const carrosseis = categoria.carrosseis;
 
       if (!carrosseis) return;
 
-   
+
       for (const tipo in carrosseis) {
         const listaProdutos = carrosseis[tipo];
 
@@ -361,76 +361,171 @@ atualizarBadgeSemAbrir();
 
 document.addEventListener("click", (e) => {
 
-    // Botão +
-    if (e.target.classList.contains("mais")) {
-        const card = e.target.closest(".overlay-card");
-        const valor = card.querySelector(".valor");
-        const total = card.querySelector(".total strong");
+  // Botão +
+  if (e.target.classList.contains("mais")) {
+    const card = e.target.closest(".overlay-card");
+    const valor = card.querySelector(".valor");
+    const total = card.querySelector(".total strong");
 
-        let quantidade = Number(valor.textContent);
-        quantidade++;
+    let quantidade = Number(valor.textContent);
+    quantidade++;
 
-        valor.textContent = quantidade;
+    valor.textContent = quantidade;
 
-        const precoUnitario = Number(total.dataset.preco);
-        total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
+    const precoUnitario = Number(total.dataset.preco);
+    total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
+  }
+
+  // Botão -
+  if (e.target.classList.contains("menos")) {
+    const card = e.target.closest(".overlay-card");
+    const valor = card.querySelector(".valor");
+    const total = card.querySelector(".total strong");
+
+    let quantidade = Number(valor.textContent);
+
+    if (quantidade > 1) {
+      quantidade--;
+      valor.textContent = quantidade;
+
+      const precoUnitario = Number(total.dataset.preco);
+      total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
     }
-
-    // Botão -
-    if (e.target.classList.contains("menos")) {
-        const card = e.target.closest(".overlay-card");
-        const valor = card.querySelector(".valor");
-        const total = card.querySelector(".total strong");
-
-        let quantidade = Number(valor.textContent);
-
-        if (quantidade > 1) {
-            quantidade--;
-            valor.textContent = quantidade;
-
-            const precoUnitario = Number(total.dataset.preco);
-            total.textContent = `R$ ${(precoUnitario * quantidade).toFixed(2).replace('.', ',')}`;
-        }
-    }
+  }
 });
+
+
+// =====================================================================================================================
+
+// NOVAS FUNÇÕES DE ANIMAÇÃO DO CONTADOR DO CARRINHO
+
+// =====================================================================================================================
+
+/**
+
+ * @param {Element} origem 
+ * @param {Element} destino 
+ */
+function animarItemVoando(origem, destino) {
+  if (!origem || !destino) return;
+
+  const origemRect = origem.getBoundingClientRect();
+  const destinoRect = destino.getBoundingClientRect();
+
+  const itemVoador = document.createElement('div');
+  itemVoador.classList.add('flying-item');
+  document.body.appendChild(itemVoador);
+
+  const startX = origemRect.left + (origemRect.width / 2);
+  const startY = origemRect.top + (origemRect.height / 2);
+  itemVoador.style.left = `${startX}px`;
+  itemVoador.style.top = `${startY}px`;
+
+  setTimeout(() => {
+    const endX = destinoRect.left + (destinoRect.width / 2);
+    const endY = destinoRect.top + (destinoRect.height / 2);
+
+    itemVoador.style.left = `${endX}px`;
+    itemVoador.style.top = `${endY}px`;
+    itemVoador.style.transform = 'scale(0.3)';
+    itemVoador.style.opacity = '1';
+  }, 10);
+
+  setTimeout(() => {
+    itemVoador.remove();
+  }, 700); 
+}
+
+const badgeGlobal = document.getElementById("badge-carrinho");
+if (badgeGlobal) {
+  badgeGlobal.addEventListener('animationend', () => {
+    badgeGlobal.classList.remove('badge-pop-animation');
+  });
+}
+
 
 // ======================================================
 
 // ADICIONAR AO CARRINHO - Dinâmico
 
 // ======================================================
+
 document.addEventListener("click", async (e) => {
+  const isAdicionar = e.target.classList.contains("adicionar");
+  const isRemover = e.target.closest(".remover-iten");
+  const isIncrementar = e.target.classList.contains("incrementar");
+  const isDecrementar = e.target.classList.contains("decrementar");
 
-    if (e.target.classList.contains("adicionar")) {
+  if (!isAdicionar && !isRemover && !isIncrementar && !isDecrementar) return;
 
-        const card = e.target.closest(".overlay-card");
 
-        const idProduto = card.dataset.id;
-        const quantidade = Number(card.querySelector(".valor").textContent);
-        const precoUnitario = Number(card.querySelector(".total strong").dataset.preco);
-        const total = precoUnitario * quantidade;
+  if (isAdicionar) {
+    const btnAdicionar = e.target;
+    const card = btnAdicionar.closest(".overlay-card");
+    if (!card) return;
 
-        try {
-            const resposta = await fetch("http://localhost:3000/api/carrinho/add", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    id_montarProduto: idProduto,
-                    quantidade,
-                    valor_total: total
-                })
-            });
 
-            const resultado = await resposta.json();
-            console.log("Item adicionado ao carrinho:", resultado);
+    const idProduto = card.dataset.id;
+    const quantidade = Number(card.querySelector(".valor").textContent);
+    const precoUnitario = Number(card.querySelector(".total strong").dataset.preco);
+    const total = precoUnitario * quantidade;
 
-            atualizarBadgeSemAbrir();
-            
 
-        } catch (erro) {
-            console.error("Erro ao adicionar ao carrinho:", erro);
-        }
+    btnAdicionar.disabled = true;
+    btnAdicionar.textContent = 'Adicionando...';
+
+
+    const cardPrincipal = card.closest('.card-mais-pedidos');
+    const imgProduto = cardPrincipal.querySelector('img');
+    const iconeCarrinho = document.getElementById('cart-icon-target');
+
+    const pAnimacao = new Promise((resolve) => {
+      if (imgProduto && iconeCarrinho) {
+        animarItemVoando(imgProduto, iconeCarrinho);
+        setTimeout(resolve, 700);
+      } else {
+        console.warn("Elemento de origem ou destino não encontrado para animação.");
+        resolve();
+      }
+    });
+
+
+    const pFetch = fetch("http://localhost:3000/api/carrinho/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id_montarProduto: idProduto,
+        quantidade,
+        valor_total: total
+
+      })
+    }).then(res => {
+      if (!res.ok) throw new Error('Falha ao adicionar');
+      return res.json();
+    });
+
+
+    try {
+      const [resultadoFetch, _] = await Promise.all([pFetch, pAnimacao]);
+
+      console.log("Item adicionado ao carrinho:", resultadoFetch);
+
+
+      atualizarBadgeSemAbrir();
+
+
+      btnAdicionar.disabled = false;
+      btnAdicionar.textContent = 'Adicionar';
+
+
+
+
+    } catch (erro) {
+      console.error("Erro ao adicionar ao carrinho:", erro);
+      btnAdicionar.disabled = false;
+      btnAdicionar.textContent = 'Adicionar';
     }
+  }
 });
 
 // ========================================================================================================================
@@ -441,29 +536,36 @@ document.addEventListener("click", async (e) => {
 
 
 function atualizarBadgeCarrinho(lista) {
-    const badge = document.getElementById("badge-carrinho");
-    if (!badge) return;
+  const badge = document.getElementById("badge-carrinho");
+  if (!badge) return;
 
-    const quantidadeTotal = lista.reduce((acc, item) => acc + Number(item.quantidade), 0);
+  const quantidadeTotal = lista.reduce((acc, item) => acc + Number(item.quantidade), 0);
 
-    if (quantidadeTotal >= 0 ) {
-        badge.textContent = quantidadeTotal;
-        badge.style.display = "flex";
-    } else {
-        badge.style.display = "none";
-    }
+  if (quantidadeTotal > 0) {
+    badge.textContent = quantidadeTotal;
+    badge.style.display = "flex";
+
+    badge.classList.remove('badge-pop-animation');
+    void badge.offsetWidth; 
+    badge.classList.add('badge-pop-animation');
+    
+
+  } else {
+    badge.textContent = 0; 
+    badge.style.display = "flex"; 
+  }
 }
 
 async function atualizarBadgeSemAbrir() {
-    try {
-        const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
-        const itens = await resposta.json();
+  try {
+    const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+    const itens = await resposta.json();
 
-        atualizarBadgeCarrinho(itens);
+    atualizarBadgeCarrinho(itens);
 
-    } catch (erro) {
-        console.error("Erro ao atualizar badge:", erro);
-    }
+  } catch (erro) {
+    console.error("Erro ao atualizar badge:", erro);
+  }
 }
 
 
@@ -475,17 +577,17 @@ async function atualizarBadgeSemAbrir() {
 // ========================================================================================================================
 
 async function carregarCarrinhoFrontEnd() {
-    try {
-        const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
-        const itens = await resposta.json();
+  try {
+    const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+    const itens = await resposta.json();
 
-        renderizarCarrinho(itens);
-        atualizarBadgeCarrinho(itens);
-        atualizarBadgeSemAbrir();
+    renderizarCarrinho(itens);
+    atualizarBadgeCarrinho(itens);
+    atualizarBadgeSemAbrir();
 
-    } catch (erro) {
-        console.error("Erro ao carregar carrinho:", erro);
-    }
+  } catch (erro) {
+    console.error("Erro ao carregar carrinho:", erro);
+  }
 }
 
 // ========================================================================================================================
@@ -495,41 +597,56 @@ async function carregarCarrinhoFrontEnd() {
 // ========================================================================================================================
 
 function renderizarCarrinho(lista) {
-    const area = document.getElementById("itensCarrinho");
+  const area = document.getElementById("itensCarrinho");
 
-    if (!area) {
-        console.warn("Container #itensCarrinho não encontrado.");
-        return;
-    }
+  if (!area) {
+    console.warn("Container #itensCarrinho não encontrado.");
+    return;
+  }
 
-    area.innerHTML = "";
+  area.innerHTML = "";
 
-    if (!lista || lista.length === 0) {
+  if (!lista || lista.length === 0) {
     area.innerHTML = `
         <div class="carrinho-vazio">
-            <p>Seu carrinho está vazio.</p>
-            <img src="./assets/icons/Carrinho/carrinho-vazio.png" alt="Carrinho vazio">
+            
+            <svg class="carrinho-vazio-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
+            </svg>
+
+            <p class="carrinho-vazio-titulo">
+                Seu carrinho está vazio
+            </p>
+
+            <p class="carrinho-vazio-subtitulo">
+                Adicione seus produtos favoritos do cardápio para vê-los aqui.
+            </p>
+
+            <button class="carrinho-vazio-cta" onclick="fecharCarrinhoFunc()">
+                Ver Cardápio
+            </button>
+            
         </div>
     `;
     atualizarTotalCarrinho([]);
     return;
-}
+  }
 
 
-    lista.forEach(item => {
-        const div = document.createElement("div");
-        div.classList.add("card-iten");
+  lista.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("card-iten");
 
-        
-        const imagem = "./assets/icons/categoria/comida.png";
 
-        div.innerHTML = `
+    const imagem = "./assets/icons/categoria/comida.png";
+
+    div.innerHTML = `
             <div class="card-iten-imagem">
                 <img src="${imagem}">
             </div>
 
             <div class="iten-detalhe">
-                <label>${item.nome_produto || "Produto"}</label>
+                <label>${item.descricao_item || "Produto"}</label>
                 <span>R$ ${Number(item.valor_total).toFixed(2).replace('.', ',')}</span>
 
                 <div class="iten-quantidade">
@@ -546,10 +663,10 @@ function renderizarCarrinho(lista) {
             </div>
         `;
 
-        area.appendChild(div);
-    });
+    area.appendChild(div);
+  });
 
-    atualizarTotalCarrinho(lista);
+  atualizarTotalCarrinho(lista);
 }
 
 
@@ -572,7 +689,7 @@ document.addEventListener("click", async (e) => {
       const resultado = await resposta.json();
       console.log("Item removido:", resultado);
 
-      
+
       carregarCarrinhoFrontEnd();
       atualizarBadgeSemAbrir();
 
@@ -590,56 +707,56 @@ document.addEventListener("click", async (e) => {
 
 document.addEventListener("click", async (e) => {
 
-   
-    if (e.target.classList.contains("incrementar")) {
 
-        const id = e.target.dataset.id;
+  if (e.target.classList.contains("incrementar")) {
 
-        const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
-        let quantidadeAtual = Number(quantSpan.textContent);
-        const novaQuantidade = quantidadeAtual + 1;
+    const id = e.target.dataset.id;
 
-        try {
-            await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ quantidade: novaQuantidade })
-            });
+    const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
+    let quantidadeAtual = Number(quantSpan.textContent);
+    const novaQuantidade = quantidadeAtual + 1;
 
-            carregarCarrinhoFrontEnd();
-            atualizarBadgeSemAbrir();
+    try {
+      await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quantidade: novaQuantidade })
+      });
 
-        } catch (erro) {
-            console.error("Erro ao aumentar quantidade:", erro);
-        }
+      carregarCarrinhoFrontEnd();
+      atualizarBadgeSemAbrir();
+
+    } catch (erro) {
+      console.error("Erro ao aumentar quantidade:", erro);
     }
+  }
 
-    
-    if (e.target.classList.contains("decrementar")) {
 
-        const id = e.target.dataset.id;
+  if (e.target.classList.contains("decrementar")) {
 
-        const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
-        let quantidadeAtual = Number(quantSpan.textContent);
+    const id = e.target.dataset.id;
 
-        if (quantidadeAtual <= 1) return;
+    const quantSpan = e.target.closest(".iten-quantidade").querySelector(".quantidade-valor");
+    let quantidadeAtual = Number(quantSpan.textContent);
 
-        const novaQuantidade = quantidadeAtual - 1;
+    if (quantidadeAtual <= 1) return;
 
-        try {
-            await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ quantidade: novaQuantidade })
-            });
+    const novaQuantidade = quantidadeAtual - 1;
 
-            carregarCarrinhoFrontEnd();
-            atualizarBadgeSemAbrir();
+    try {
+      await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quantidade: novaQuantidade })
+      });
 
-        } catch (erro) {
-            console.error("Erro ao diminuir quantidade:", erro);
-        }
+      carregarCarrinhoFrontEnd();
+      atualizarBadgeSemAbrir();
+
+    } catch (erro) {
+      console.error("Erro ao diminuir quantidade:", erro);
     }
+  }
 });
 
 // ========================================================================================================================
@@ -649,16 +766,14 @@ document.addEventListener("click", async (e) => {
 // ========================================================================================================================
 
 function atualizarTotalCarrinho(lista) {
-    const elementoTotal = document.querySelector(".total-valor");
-    if (!elementoTotal) return;
+  const elementoTotal = document.querySelector(".total-valor");
+  if (!elementoTotal) return;
 
-    if (!lista || lista.length === 0) {
-        elementoTotal.textContent = "R$ 0,00";
-        return;
-    }
+  if (!lista || lista.length === 0) {
+    elementoTotal.textContent = "R$ 0,00";
+    return;
+  }
 
-    const total = lista.reduce((soma, item) => soma + Number(item.valor_total), 0);
-    elementoTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+  const total = lista.reduce((soma, item) => soma + Number(item.valor_total), 0);
+  elementoTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
-
-

@@ -523,20 +523,66 @@ body.menu-aberto {
 
 .carrinho-vazio {
     display: flex;
-    height: 85%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 50px;
-    opacity: 0.7;
-    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+    height: 100%;
+    box-sizing: border-box; 
+    opacity: 0; 
+    animation: fadeIn 0.5s 0.1s ease-out forwards;
 }
 
-.carrinho-vazio img {
-    width: 140px;  
-    margin-right: 10px; 
-    height: auto;
-     
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.carrinho-vazio-icon {
+    width: 128px;  
+    height: 128px;
+    color: #e5e7eb; 
+}
+
+
+.carrinho-vazio-titulo {
+    margin-top: 24px;
+    font-size: 1.25rem;
+    font-weight: 600;  
+    color: #111827; 
+}
+
+
+.carrinho-vazio-subtitulo {
+    margin-top: 8px;
+    font-size: 0.875rem; 
+    color: #6b7280; 
+    max-width: 280px; 
+}
+
+
+.carrinho-vazio-cta {
+    margin-top: 32px;
+    width: 100%;
+    max-width: 280px;
+    background-color: #000000ab;
+    color: #fff; 
+    font-weight: 700; 
+    font-family: inherit; 
+    font-size: 0.875rem; 
+    padding: 12px 24px;
+    border-radius: 9999px; 
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.carrinho-vazio-cta:hover {
+    background-color: #333333e7;
+    transform: scale(1.03); 
 }
 
 .btn-carrinho {
@@ -548,12 +594,44 @@ body.menu-aberto {
     top: -5px;
     right: -5px;
     background: #ffcc00; 
-    color: #000;
+    color: #820a0a;
     font-size: 12px;
     padding: 3px 6px;
     border-radius: 50%;
     font-weight: bold;
     
+}
+
+@keyframes badge-pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); } 
+  100% { transform: scale(1); }
+}
+
+.badge-pop-animation {
+ 
+  
+  animation: badge-pop 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+
+.flying-item {
+  position: fixed; 
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  background-color: #ffcc00; 
+  border: 2px solid #000;
+  border-radius: 50%; 
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s cubic-bezier(0.1, 0, 0.4, 1); 
+}
+   
+.adicionar:disabled {
+  background-color: #ccc; 
+  color: #666;
+  cursor: wait; 
 }
 
 .card-iten {
@@ -1106,11 +1184,12 @@ body.menu-aberto {
 }
 
 .overlay-card .adicionar {
+    width: 195px;
     background-color: #ff0800;
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 65px;
+    padding: 10px 0px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;

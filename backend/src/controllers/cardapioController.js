@@ -23,7 +23,8 @@ export async function getCardapio(req, res) {
           descricao: item.descricao_montada || item.desc_produto,
           imagem: item.imagem_url,
           tipo_sabor: tipo,
-          valor: item.valor_total
+          valor: item.valor_total,
+          tamanho: item.tamanho
         });
       }
 
