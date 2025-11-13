@@ -14,6 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use("/assets", express.static(path.join(__dirname, "..", "assets")));
+app.use(express.static(path.join(__dirname, "..", "Frontend")));
 
 //======================================================================================================
 
@@ -25,6 +26,10 @@ app.use("/api", cardapioRoutes);
 app.use("/api/carrinho", carrinhoRoutes);
 
 
+// Se não achar nenhuma rota, devolve o index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "Frontend", "index.html"));
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {
