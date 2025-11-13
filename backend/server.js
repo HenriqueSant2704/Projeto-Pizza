@@ -13,25 +13,27 @@ app.use(express.json());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use("/assets", express.static(path.join(__dirname, "..", "assets")));
-app.use(express.static(path.join(__dirname, "..", "Frontend")));
+// Caminhos
+const rootPath = path.join(__dirname, "../.."); // sobe até a raiz do projeto
+const frontendPath = path.join(rootPath, "Frontend");
 
-//======================================================================================================
+// Servir arquivos estáticos
+app.use("/assets", express.static(path.join(rootPath, "assets")));
+app.use(express.static(frontendPath));
+app.use(express.static(rootPath)); // permite servir o index.html da raiz
 
 // Rotas da API
-
-//====================================================================================================================
 app.use("/api", cardapioRoutes);
-
 app.use("/api/carrinho", carrinhoRoutes);
 
-
-// Se não achar nenhuma rota, devolve o index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "Frontend", "index.html"));
+// Rota padrão → index.html
+app.use((req, res) => {
+  res.sendFile(path.join(rootPath, "index.html"));
 });
 
-const PORT = 3000;
+
+// Porta (Render usa variável automática PORT)
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
