@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function carregarCardapio() {
   try {
-    const resposta = await fetch("http://localhost:3000/api/cardapio");
+    const resposta = await fetch("http://192.168.0.12:3000/api/cardapio");
     const categorias = await resposta.json();
 
     const containerPrincipal = document.querySelector(".container-produtos");
@@ -291,7 +291,7 @@ function criarCarrosselCategoria(titulo, listaProdutos, temMontarPizza, containe
     card.classList.add("card-mais-pedidos");
 
     card.innerHTML = `
-      <img src="http://localhost:3000${produto.imagem}" alt="${produto.descricao}">
+      <img src="http://192.168.0.12:3000${produto.imagem}" alt="${produto.descricao}">
       <div class="descricao-mais-pedidos">
           <h3>${produto.descricao}</h3>
           <p><span>${produto.tamanho || ""}</span></p>
@@ -490,7 +490,7 @@ document.addEventListener("click", async (e) => {
     });
 
 
-    const pFetch = fetch("http://localhost:3000/api/carrinho/add", {
+    const pFetch = fetch("http://192.168.0.12:3000/api/carrinho/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -558,7 +558,7 @@ function atualizarBadgeCarrinho(lista) {
 
 async function atualizarBadgeSemAbrir() {
   try {
-    const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+    const resposta = await fetch("http://192.168.0.12:3000/api/carrinho/listar");
     const itens = await resposta.json();
 
     atualizarBadgeCarrinho(itens);
@@ -578,7 +578,7 @@ async function atualizarBadgeSemAbrir() {
 
 async function carregarCarrinhoFrontEnd() {
   try {
-    const resposta = await fetch("http://localhost:3000/api/carrinho/listar");
+    const resposta = await fetch("http://192.168.0.12:3000/api/carrinho/listar");
     const itens = await resposta.json();
 
     renderizarCarrinho(itens);
@@ -682,7 +682,7 @@ document.addEventListener("click", async (e) => {
     const idCarrinho = btn.dataset.id;
 
     try {
-      const resposta = await fetch(`http://localhost:3000/api/carrinho/deletar/${idCarrinho}`, {
+      const resposta = await fetch(`http://192.168.0.12:3000/api/carrinho/deletar/${idCarrinho}`, {
         method: "DELETE"
       });
 
@@ -717,7 +717,7 @@ document.addEventListener("click", async (e) => {
     const novaQuantidade = quantidadeAtual + 1;
 
     try {
-      await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+      await fetch(`http://192.168.0.12:3000/api/carrinho/atualizar/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantidade: novaQuantidade })
@@ -744,7 +744,7 @@ document.addEventListener("click", async (e) => {
     const novaQuantidade = quantidadeAtual - 1;
 
     try {
-      await fetch(`http://localhost:3000/api/carrinho/atualizar/${id}`, {
+      await fetch(`http://192.168.0.12:3000/api/carrinho/atualizar/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantidade: novaQuantidade })

@@ -28,5 +28,5 @@ app.use("/api/carrinho", carrinhoRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+  console.log(`🚀 Servidor rodando em http://192.168.0.12:${PORT}`);
 });
