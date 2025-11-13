@@ -14,17 +14,21 @@ app.use(express.json());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Caminho para a raiz do projeto (sobe 1 nível a partir do backend)
+const rootPath = path.join(__dirname, "..");
+
 // Servir arquivos estáticos (HTML, CSS, JS, imagens)
-app.use(express.static(__dirname));
-app.use("/assets", express.static(path.join(__dirname, "assets")));
+app.use("/assets", express.static(path.join(rootPath, "assets")));
+app.use(express.static(path.join(rootPath, "Frontend")));
+app.use(express.static(rootPath));
 
 // Rotas da API
 app.use("/api", cardapioRoutes);
 app.use("/api/carrinho", carrinhoRoutes);
 
-// Rota principal → index.html
+// Rota principal → index.html da raiz
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(rootPath, "index.html"));
 });
 
 // Porta (Render define automaticamente a variável PORT)
